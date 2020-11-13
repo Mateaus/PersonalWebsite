@@ -9,29 +9,25 @@
 
     <!-- Bootstrap 4 CSS -->
     <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}">
-    <!-- Tabler CSS -->
-    <link rel="stylesheet" href="{% static 'tabler/css/tabler.css' %}">
 
-    <style>
-        body {
-            display: none;
-        }
-    </style>
 </head>
 
-<body class="antialiased" style="display: block;">
+<body>
 
-    <div class="page">
-
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
@@ -40,10 +36,11 @@
                         <a class="nav-link" href="#">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#">Contact me</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav">
+
+                <ul class="navbar-nav my-2 my-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Github</a>
                     </li>
@@ -51,40 +48,27 @@
                         <a class="nav-link" href="#">LinkedIn</a>
                     </li>
                 </ul>
+
             </div>
         </nav>
+    </header>
 
-        <div class="content">
-
-            <div class="container-xl">
-                
-            </div>
-
-            <footer class="footer footer-transparent">
-                <div class="container">
-                    <div class="row text-center align-items-center flex-row-reverse">
-                        <div class="col-lg-auto ml-lg-auto">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="#" class="link-secondary">Documentation</a></li>
-                                <li class="list-inline-item"><a href="#" class="link-secondary">FAQ</a></li>
-                                <li class="list-inline-item"><a href="#" class="link-secondary">Source code</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-auto mt-3 mt-lg-0">
-                            Copyright © 2020
-                            <a href="." class="link-secondary">First Name - Last Name</a>.
-                            All rights reserved.
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+    <div class="container-fluid">
+        <!-- Use this in other html views deriving from this view as follow:
+            {% block content %}
+            <h3> This is my content </h3>
+            <p> This is more content added. </p>
+            {% endblock content %}
+        -->
+        {% block content %}{% endblock content %}
     </div>
 
     <!-- JQuery -->
-    <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/jquery/dist/jquery-3.2.1.slim.min.js' %}"></script>
+    <!-- Popper -->
+    <script src="{% static 'libs/popper/dist/popper.min.js' %}"></script>
     <!-- Bootstrap 4 JS -->
-    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>
