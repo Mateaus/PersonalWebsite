@@ -28,10 +28,12 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == about_me %} active {% endif %}" href="{% url 'about-me' %}">About me</a>
+                            <a class="nav-link {% if request.path == about_me %} active {% endif %}"
+                                href="{% url 'about-me' %}">About me</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == projects %} active {% endif %}" href="{% url 'projects' %}">Projects</a>
+                            <a class="nav-link {% if request.path == projects %} active {% endif %}"
+                                href="{% url 'projects' %}">Projects</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>
