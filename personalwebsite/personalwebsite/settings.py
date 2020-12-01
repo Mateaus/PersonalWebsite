@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'aboutme.apps.AboutmeConfig',
     'blog.apps.BlogConfig',
     'resume.apps.ResumeConfig',
-    'contact.apps.ContactConfig'
+    'contact.apps.ContactConfig',
+    'projects.apps.ProjectsConfig'
 ]
 
 MIDDLEWARE = [
