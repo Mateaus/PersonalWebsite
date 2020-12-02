@@ -6,4 +6,4 @@ def projects(request):
     context = {
         'project_list': project_list,
     }
-    return render(request, 'project/projects.html', context)
+    return render(request, 'projects/projects.html', context)
