@@ -1,4 +1,7 @@
 {% load static %}
+{% url 'about-me' as about_me %}
+{% url 'projects' as projects %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,7 @@
     <title>Document</title>
 
     <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="{% static 'libs/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
 </head>
 
@@ -21,54 +24,53 @@
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">About me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact me</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == about_me %} active {% endif %}"
+                                href="{% url 'about-me' %}">About me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == projects %} active {% endif %}"
+                                href="{% url 'projects' %}">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact me</a>
+                        </li>
+                    </ul>
 
-                <ul class="navbar-nav my-2 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">LinkedIn</a>
-                    </li>
-                </ul>
-
+                    <ul class="navbar-nav my-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Github</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div class="container-fluid">
-        <!-- Use this in other html views deriving from this view as follow:
-            {% block content %}
-            <h3> This is my content </h3>
-            <p> This is more content added. </p>
-            {% endblock content %}
-        -->
-        {% block content %}{% endblock content %}
+    <div class="container">
+        {% block content %}{% endblock %}
+        <footer class="border-bottom my-5"></footer>
     </div>
 
+
     <!-- JQuery -->
-    <script src="{% static 'libs/jquery/dist/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
     <!-- Popper -->
-    <script src="{% static 'libs/popper/dist/popper.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
     <!-- Bootstrap 4 JS -->
-    <script src="{% static 'libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>
