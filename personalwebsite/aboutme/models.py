@@ -9,6 +9,7 @@ class Section(models.Model):
 
 class SectionContent(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='aboutme', null=True, blank=True)
     title = models.CharField(max_length=64)
     content = models.CharField(max_length=256)
 
