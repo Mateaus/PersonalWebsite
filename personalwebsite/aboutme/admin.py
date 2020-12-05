@@ -11,7 +11,4 @@ class IntroductionModelAdmin(admin.ModelAdmin):
         """ 
         Allows the admin to only add a single entry for Introduction.
         """
-        count = Introduction.objects.all().count()
-        if count == 0:
-            return True
-        return False
+        return Introduction.objects.all().count() == 0
