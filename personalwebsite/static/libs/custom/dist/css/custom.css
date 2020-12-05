@@ -41,3 +41,12 @@
 .font-bold {
     font-weight: 700;
 }
+
+.my-image {
+    width: 100%;
+}
+
+.image-div {
+    height: 125px;
+    overflow: hidden;
+}
