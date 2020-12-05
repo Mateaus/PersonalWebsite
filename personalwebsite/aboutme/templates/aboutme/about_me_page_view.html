@@ -1,10 +1,6 @@
 {% extends "base_page_view.html" %}
 {% load static %}
 
-{% block customcss %}
-<link rel="stylesheet" href="{% static 'libs/custom/dist/css/custom.css' %}">
-{% endblock customcss %}
-
 {% block content %}
 
 {% if introduction %}
@@ -70,7 +66,7 @@
     {% for section in sections %}
     <div class="my-group">
         <div class="page-title border-bottom">
-            <h1 class="display-4 font-family-roboto font-regular">{{ section.title }}</h1>
+            <h1 class="display-4 font-family-roboto font-medium">{{ section.title }}</h1>
         </div>
 
         {% for content in contents %}
@@ -100,7 +96,7 @@
 
 <div class="my-group">
     <div class="page-title border-bottom">
-        <h1 class="display-4 font-family-roboto font-regular">Interests</h1>
+        <h1 class="display-4 font-family-roboto font-medium">Interests</h1>
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 mt-4">
