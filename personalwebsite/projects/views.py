@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from .models import Project
 
 # Create your views here.
 def projects(request):
-    project_list = ['Project 1', 'Project 2', 'Project 3']
+    all_projects = Project.objects.all()
     context = {
-        'project_list': project_list,
+        'all_projects': all_projects
     }
-    return render(request, 'project/projects.html', context)
+    return render(request, 'projects.html', context)
