@@ -3,28 +3,26 @@
 
 {% block content %}
 <div class="page-title border-bottom">
-    <h1 class="display-4">Projects</h1>
+    <h1 class="display-5 font-family-roboto">Projects</h1>
 </div>
 {% for project in all_projects %}
-<div class="my-2">
-    {{project.title}}
-</div>
 <div class="row">
-    <div class="col-md-5 col-lg-4 col-xl-3 project-image">
-        <img src="{{project.cover_image.url}}" height="256px" width="256px" style="border: 1px solid black;">
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="col-lg-10">
-                <p>{{project.description}}</p>
+    <div class="col-lg-4 col-md-5 col-sm-6 text-center my-3">
+        <div>
+            <div class="font-family-roboto font-bold">
+                {{project.title}}
             </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <button class="btn btn-secondary">Read More</button>
+            <div>
+                {% if project.cover_image %}
+                <img src="{{project.cover_image.url}}" height="256px" width="256px" style="border: 1px solid black;">
+                {% else %}
+                <img src="../media/project/cover_images/empty.jpg" height="256px" width="256px"
+                    style="border: 1px solid black;">
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
+
 {% endfor %}
 {% endblock %}
