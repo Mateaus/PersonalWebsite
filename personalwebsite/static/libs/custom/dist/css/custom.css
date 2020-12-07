@@ -18,6 +18,13 @@
     .my-group {padding-top: 30%;}
 }
 
+@media screen and (max-width: 992px) {
+    .proj-desc {
+        margin-top: 0px !important;
+        text-align: center;
+    }
+}
+
 .font-family-roboto {
     font-family: 'Roboto', sans-serif;
 }
