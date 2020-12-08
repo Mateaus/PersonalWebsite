@@ -5,6 +5,7 @@
 <div class="page-title border-bottom">
     <h1 class="display-5 font-family-roboto">Projects</h1>
 </div>
+{% if all_projects %}
 {% for project in all_projects %}
 <div class="row">
     <div class="col-lg-4 col-md-12 col-sm-12 text-center my-3">
@@ -32,4 +33,9 @@
     </div>
 </div>
 {% endfor %}
+{% else %}
+<div>
+    <h2 class="display-5 font-family-roboto font-medium text-center my-5">No projects to display...</h1>
+</div>
+{% endif %}
 {% endblock %}
