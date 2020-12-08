@@ -1,0 +1,24 @@
+h1, h2, h3, h4, h5 {
+    font-family: 'Cabin', sans-serif;
+}
+
+a {
+    font-family: 'Cabin', sans-serif;
+}
+
+.nav-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}

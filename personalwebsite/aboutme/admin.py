@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Introduction, Section, SectionContent
+from .models import Introduction, IntroductionContent, Section, SectionContent
 
 admin.site.register(Section)
 admin.site.register(SectionContent)
+admin.site.register(IntroductionContent)
 
 @admin.register(Introduction)
 class IntroductionModelAdmin(admin.ModelAdmin):

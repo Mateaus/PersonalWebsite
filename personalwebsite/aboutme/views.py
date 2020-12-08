@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from .models import Introduction, Section, SectionContent
+from .models import Introduction, IntroductionContent, Section, SectionContent
 
 # Create your views here.
 def about_me(request):
     introduction = Introduction.objects.all().first()
+    introduction_contents = IntroductionContent.objects.all()
     sections = Section.objects.all()
     section_contents = SectionContent.objects.all()
 
     context = {
         "introduction": introduction,
+        "introduction_contents": introduction_contents,
         "sections": sections,
         "contents": section_contents
     }

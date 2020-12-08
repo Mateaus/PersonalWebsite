@@ -2,13 +2,18 @@ from django.db import models
 
 # Create your models here.
 class Introduction(models.Model):
-    first_name = models.CharField(max_length=36)
-    last_name = models.CharField(max_length=36)
     profile_image = models.ImageField(upload_to='introduction', null=True, blank=True)
-    description = models.CharField(max_length=256)
+    title = models.CharField(max_length=256)
 
     def __str__(self):
-        return self.first_name + " - " + self.last_name
+        return "Introduction"
+
+class IntroductionContent(models.Model):
+    introduction = models.ForeignKey(Introduction, on_delete=models.CASCADE)
+    paragraph = models.CharField(max_length=512)
+
+    def __str__(self):
+        return self.paragraph
 
 class Section(models.Model):
     title = models.CharField(max_length=64)
