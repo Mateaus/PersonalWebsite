@@ -4,7 +4,7 @@ from django.utils.timezone import now
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField(max_length=32, null=False, blank=False)
     icon = models.ImageField(
         upload_to="project/tag/icons/",
         height_field=None,
@@ -12,7 +12,9 @@ class Tag(models.Model):
         blank=True,
         null=True
     )
-
+    def __str__(self):
+        return self.name
+    
 
 # Create your models here.
 class Project(models.Model):
@@ -25,6 +27,8 @@ class Project(models.Model):
         blank=True,
         null=True
     )
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
     data_added = models.DateTimeField(default=now, editable=False)
     last_modified_date = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.title
