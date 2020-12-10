@@ -8,26 +8,20 @@
 {% if all_projects %}
 {% for project in all_projects %}
 <div class="row">
-    <div class="col-lg-4 col-md-12 col-sm-12 text-center my-3">
-        <div>
-            <div class="font-family-roboto font-bold">
-                {{project.title}}
-            </div>
-            <div>
-                {% if project.cover_image %}
-                <img src="{{project.cover_image.url}}" height="256px" width="256px" style="border: 1px solid black;">
-                {% else %}
-                <img src="../media/project/cover_images/empty.jpg" height="256px" width="256px"
-                    style="border: 1px solid black;">
-                {% endif %}
-            </div>
-        </div>
+</div>
+<div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 text-center my-3">
+        {% if project.cover_image %}
+        <a><img src="{{project.cover_image.url}}" height="256px" width="256px" style="border: 1px solid black;"></a>
+        {% else %}
+        <a><img src="../media/project/cover_images/empty.jpg" height="256px" width="256px" style="border: 1px solid black; position: relative;"></a>
+        {% endif %}
     </div>
-    <div class="col-lg-8 mt-5 proj-desc">
-        {{project.description}}
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-outline-info mt-4">Read More</button>
+    <div class="col-xl col-lg-8">
+        <div class="text-justify">
+            <div class="proj-desc">
+                <h5>{{project.title}}</h5>    
+                {{project.description}}
             </div>
         </div>
     </div>

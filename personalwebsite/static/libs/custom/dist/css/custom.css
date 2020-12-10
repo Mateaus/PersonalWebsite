@@ -1,3 +1,14 @@
+/* // Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... } */
 .my-group {
     padding-top: 0px;
 }
@@ -18,10 +29,19 @@
     .my-group {padding-top: 30%;}
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 576px) {
     .proj-desc {
-        margin-top: 0px !important;
-        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 80%;
+        display: block;
+        overflow: hidden;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .proj-desc {
+        margin-top: .75em;
     }
 }
 
