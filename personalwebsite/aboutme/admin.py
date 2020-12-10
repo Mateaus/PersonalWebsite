@@ -1,4 +1,5 @@
 from django.contrib import admin
+# Register your models here.
 from .models import Introduction, Section, SectionContent
 
 admin.site.register(Section)
