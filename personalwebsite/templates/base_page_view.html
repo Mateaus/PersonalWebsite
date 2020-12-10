@@ -35,23 +35,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <h3 style="margin: 0 0 0 0; padding-left: 16px;">View</h3>
+            <h3 id="my-current-view" style="margin: 0 0 0 0; padding-left: 16px; display: none;">View</h3>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="collapse navbar-collapse container" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link nav-text {% if request.path == about_me %} active {% endif %}"
+                        <a class="nav-link nav-text {% if request.path == about_me %}active{% endif %}"
                             href="{% url 'about-me' %}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-text {% if request.path == projects %} active {% endif %}"
+                        <a class="nav-link nav-text {% if request.path == projects %}active{% endif %}"
                             href="{% url 'projects' %}">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-text" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-text {% if request.path == resume %} active {% endif %}"
+                        <a class="nav-link nav-text {% if request.path == resume %}active{% endif %}"
                             href="{% url 'resume' %}">Resume</a>
                     </li>
                     <li class="nav-item">

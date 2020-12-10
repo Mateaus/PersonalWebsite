@@ -1,3 +1,4 @@
+var currentPathName = window.location.pathname;
 var currentScreenSize = -1;
 
 /* Handle the different windows sizes here
@@ -26,49 +27,58 @@ function onWindowResize() {
 
 /* Handles events when the screen width is greater or equal to 1200px */
 function onLargeScreen() {
-    var navBarCollapse = document.getElementById("navbarCollapse");
-    navBarCollapse.classList.add("container");
-
-    var navBar = document.getElementsByClassName("navbar")[0];
-    if (navBar) {
-        navBar.style.justifyContent = "space-between";
-    }
+    showNavBarContent();
 }
 
 /* Handles events when the screen width is greater or equal to 992px
  * and less than 1200px */
 function onMediumScreen() {
-    var navBarCollapse = document.getElementById("navbarCollapse");
-    navBarCollapse.classList.add("container");
-
-    var navBar = document.getElementsByClassName("navbar")[0];
-    if (navBar) {
-        navBar.style.justifyContent = "space-between";
-    }
+    showNavBarContent();
 }
 
 /* Handles events when the screen width is greater or equal to 768px
  * and less than 992px */
 function onSmallScreen() {
-    var navBarCollapse = document.getElementById("navbarCollapse");
-    navBarCollapse.classList.remove("container");
-
-    var navBar = document.getElementsByClassName("navbar")[0];
-    if (navBar) {
-        navBar.style.justifyContent = "flex-start";
-    }
+    hideNavBarContent();
 }
 
 /* Handles events when the screen width is greater or equal to 0px
  * and less than 768px */
 function onExtraSmallScreen() {
+    hideNavBarContent();
+}
+
+function showNavBarContent() {
+    var navBarCollapse = document.getElementById("navbarCollapse");
+    navBarCollapse.classList.add("container");
+
+    var activeLink = navBarCollapse.getElementsByClassName("active")[0];
+    activeLink.style.display = "block";
+
+    var navBar = document.getElementsByClassName("navbar")[0];
+    if (navBar) {
+        navBar.style.justifyContent = "space-between";
+    }
+
+    var currentViewTitle = document.getElementById("my-current-view");
+    currentViewTitle.style.display = "none";
+}
+
+function hideNavBarContent() {
     var navBarCollapse = document.getElementById("navbarCollapse");
     navBarCollapse.classList.remove("container");
+
+    var activeLink = navBarCollapse.getElementsByClassName("active")[0];
+    activeLink.style.display = "none";
 
     var navBar = document.getElementsByClassName("navbar")[0];
     if (navBar) {
         navBar.style.justifyContent = "flex-start";
     }
+
+    var currentViewTitle = document.getElementById("my-current-view");
+    currentViewTitle.style.display = "block";
+    currentViewTitle.textContent = activeLink.text;
 }
 
 window.addEventListener('load', onWindowResize);
