@@ -8,8 +8,6 @@
 {% if all_projects %}
 {% for project in all_projects %}
 <div class="row">
-</div>
-<div class="row">
     <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 text-center my-3">
         {% if project.cover_image %}
         <a><img src="{{project.cover_image.url}}" height="256px" width="256px" style="border: 1px solid black;"></a>
@@ -22,6 +20,13 @@
             <div class="proj-desc">
                 <h5>{{project.title}}</h5>    
                 {{project.description}}
+                <div class="tags">
+                    {% if project.tags.all %}
+                    {% for tag in project.tags.all %}
+                    <span class="tag-label">{{tag}}</span>
+                    {% endfor %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
