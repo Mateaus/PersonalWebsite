@@ -5,7 +5,7 @@
 }
 
 @media only screen and (min-width: 992px) {
-    .my-aboutme {padding-top: 128px; padding-bottom: 80px;}
+    .my-aboutme {padding-top: 224px; padding-bottom: 108px;}
 }
 
 /* Handles the top margin for the initial
@@ -19,7 +19,7 @@
 @media only screen and (min-width: 768px) {
     .my-introduction-title {
         margin-top: 16px;
-        font-size: 40px;
+        font-size: 36px;
         margin-bottom: 32px;
     }
 }
@@ -43,31 +43,27 @@
 /* Handles the top margin for the initial
  * introduction paragraphs when the column overflows. */
  [class*="my-introduction-paragraph"] {
-    margin-top: 0%;
     font-size: 16px;
     margin-bottom: 24px;
 }
 
 @media only screen and (min-width: 768px) {
     .my-introduction-paragraph {
-        margin-top: 0%;
-        font-size: 1.24rem;
+        font-size: 18px;
         margin-bottom: 24px;
     }
 }
 
 @media only screen and (min-width: 992px) {
     .my-introduction-paragraph {
-        margin-top: 0%;
-        font-size: 1.05rem;
+        font-size: 17px;
         margin-bottom: 24px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .my-introduction-paragraph {
-        margin-top: 0%;
-        font-size: 1.24rem;
+        font-size: 20px;
         margin-bottom: 32px;
     }
 }
@@ -79,7 +75,11 @@
 }
 
 @media screen and (min-width: 768px), (min-width: 600px) {
-    .my-group {padding-top: 30%;}
+    .my-group {padding-top: 64px; padding-bottom: 64px;}
+}
+
+.my-title {
+    font-size: 36px;
 }
 
 .my-image {

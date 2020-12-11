@@ -22,3 +22,21 @@ a {
 .font-bold {
     font-weight: 700;
 }
+
+/* Handles the view name for mobile screens */
+#my-current-view {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    #my-current-view {
+        font-size: 24px;
+    }
+}
+
+/* Handles the navlinks on large screens */
+@media only screen and (min-width: 1200px) {
+    .nav-link {
+        font-size: 18px;
+    }
+}
