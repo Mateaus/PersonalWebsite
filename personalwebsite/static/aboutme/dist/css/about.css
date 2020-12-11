@@ -1,7 +1,7 @@
 /* Handles the top padding for the initial
  * introduction div in about me. */
  [class*="my-aboutme"] {
-    padding-top: 8px;
+    padding-top: 88px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -71,11 +71,15 @@
 /* Handles the top padding for the sections
  * inside the about me view. */
  [class*="my-group"] {
-    padding-top: 0%;
+    padding-top: 64px;
+    padding-bottom: 64px;
 }
 
 @media screen and (min-width: 768px), (min-width: 600px) {
-    .my-group {padding-top: 64px; padding-bottom: 64px;}
+    .my-group {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
 }
 
 .my-title {
