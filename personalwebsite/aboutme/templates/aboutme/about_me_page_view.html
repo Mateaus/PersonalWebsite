@@ -17,11 +17,13 @@
 
             {% if introduction.profile_image %}
 
-            <img class="rounded img-fluid my-image mx-auto d-block" src="{{ introduction.profile_image.url }}" alt="Empty">
+            <img class="rounded img-fluid my-image mx-auto d-block" src="{{ introduction.profile_image.url }}"
+                alt="Empty">
 
             {% else %}
 
-            <img class="rounded img-fluid my-image mx-auto d-block" src="{% static 'images/placeholder.png' %}" alt="Empty">
+            <img class="rounded img-fluid my-image mx-auto d-block" src="{% static 'images/placeholder.png' %}"
+                alt="Empty">
 
             {% endif %}
 
@@ -49,20 +51,25 @@
     <div class="row">
 
         <div class="col-md-12 col-lg-6 col-xl-6">
-            <img class="rounded img-fluid my-image mx-auto d-block" src="{% static 'images/placeholder.png' %}" alt="Empty">
+            <img class="rounded img-fluid my-image mx-auto d-block" src="{% static 'images/placeholder.png' %}"
+                alt="Empty">
         </div>
 
         <div class="col-md-12 col-lg-6 col-xl-6">
-            <h2 class="my-title font-family-roboto font-medium">First and Last Name</h2>
-            <p class="text-justify font-family-roboto font-light" style="font-size: 1.1rem;">
-                Use the margin and padding spacing utilities to
-                control how
-                elements and components are spaced and
-                sized. Bootstrap 4 includes a five-level scale for spacing utilities, based on a 1rem value default
-                $spacer variable. Choose values for all viewports (e.g., .mr-3 for margin-right: 1rem), or pick
-                responsive variants to target specific viewports (e.g., .mr-md-3 for margin-right: 1rem starting at
-                the
-                md breakpoint)</p>
+            <h2 class="text-left my-introduction-title font-bold">Lorem Ipsum passage</h2>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
         </div>
 
     </div>
@@ -74,13 +81,13 @@
 
 {% for section in sections %}
 <div class="my-group">
-    <div class="page-title border-bottom">
-        <h2 class="my-title font-family-roboto font-medium">{{ section.title }}</h2>
+    <div class="page-title">
+        <h2 class="my-title font-medium">{{ section.title }}</h2>
     </div>
 
     {% for content in contents %}
     {% if content.section.title == section.title %}
-    <div class="row row-cols-1 row-cols-md-3 mt-4">
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 pt-2">
         <div class="col mb-4">
             <div class="card">
                 {% if content.image %}
@@ -104,7 +111,7 @@
 
 <div class="my-group">
     <div class="page-title">
-        <h2 class="my-title font-family-roboto font-medium">Section 1</h2>
+        <h2 class="my-title font-medium">Section 1</h2>
     </div>
 
     <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 pt-2">
