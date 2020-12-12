@@ -1,6 +1,6 @@
 /* Handles the top padding for the initial
  * introduction div in about me. */
- [class*="my-aboutme"] {
+.my-aboutme {
     padding-top: 88px;
 }
 
@@ -10,7 +10,7 @@
 
 /* Handles the top margin for the initial
  * introduction title when the column overflows. */
- [class*="my-introduction-title"] {
+.my-introduction-title {
     margin-top: 16px;
     font-size: 28px;
     margin-bottom: 12px;
@@ -42,7 +42,7 @@
 
 /* Handles the top margin for the initial
  * introduction paragraphs when the column overflows. */
- [class*="my-introduction-paragraph"] {
+.my-introduction-paragraph {
     font-size: 16px;
     margin-bottom: 24px;
 }
@@ -70,7 +70,7 @@
 
 /* Handles the top padding for the sections
  * inside the about me view. */
- [class*="my-group"] {
+ .my-group {
     padding-top: 64px;
     padding-bottom: 64px;
 }
@@ -88,7 +88,13 @@
 
 .my-image {
     width: 100%;
-    height: auto;
+    max-height: 540px;
+}
+
+@media only screen and (min-width: 992px) {
+    .my-image {
+        max-height: 450px;
+    }
 }
 
 .my-card-image {
