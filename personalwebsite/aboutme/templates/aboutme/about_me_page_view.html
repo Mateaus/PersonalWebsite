@@ -17,11 +17,11 @@
 
             {% if introduction.profile_image %}
 
-            <img class="rounded img-fluid my-image" src="{{ introduction.profile_image.url }}" alt="Empty">
+            <img class="rounded img-fluid my-image mx-auto d-block" src="{{ introduction.profile_image.url }}" alt="Empty">
 
             {% else %}
 
-            <img class="rounded img-fluid" src="{% static 'images/profile.png' %}" alt="Empty">
+            <img class="rounded img-fluid my-image mx-auto d-block" src="{% static 'images/placeholder.png' %}" alt="Empty">
 
             {% endif %}
 
@@ -48,11 +48,11 @@
 <div class="my-aboutme">
     <div class="row">
 
-        <div class="col-md-6 col-xl-6">
-            <img class="rounded my-intro-image" src="{% static 'images/profile.png' %}" alt="Empty">
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <img class="rounded img-fluid my-image mx-auto d-block" src="{% static 'images/placeholder.png' %}" alt="Empty">
         </div>
 
-        <div class="col-md-6 col-xl-6">
+        <div class="col-md-12 col-lg-6 col-xl-6">
             <h2 class="my-title font-family-roboto font-medium">First and Last Name</h2>
             <p class="text-justify font-family-roboto font-light" style="font-size: 1.1rem;">
                 Use the margin and padding spacing utilities to
