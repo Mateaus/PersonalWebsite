@@ -22,8 +22,7 @@
 
             {% else %}
 
-            <img class="rounded img-fluid my-image" src="{% static 'images/placeholder.png' %}"
-                alt="Empty">
+            <img class="rounded img-fluid my-image" src="{% static 'images/placeholder.png' %}" alt="Empty">
 
             {% endif %}
 
@@ -34,11 +33,11 @@
                 {{ introduction.title }}
             </h1>
 
-            {% if introduction_contents %}
-            {% for content in introduction_contents %}
-            <p class="text-left my-introduction-paragraph font-medium">
-                {{ content.paragraph }}</p>
-            {% endfor %}
+            {% if introduction.introductioncontent_set.all %}
+                {% for content in introduction.introductioncontent_set.all %}
+                <p class="text-left my-introduction-paragraph font-medium">
+                    {{ content.paragraph }}</p>
+                {% endfor %}
             {% endif %}
         </div>
 
@@ -51,8 +50,7 @@
     <div class="row">
 
         <div class="col-md-12 col-lg-6 col-xl-6">
-            <img class="rounded img-fluid my-image" src="{% static 'images/placeholder.png' %}"
-                alt="Empty">
+            <img class="rounded img-fluid my-image" src="{% static 'images/placeholder.png' %}" alt="Empty">
         </div>
 
         <div class="col-md-12 col-lg-6 col-xl-6">
@@ -85,9 +83,8 @@
         <h2 class="my-title font-medium">{{ section.title }}</h2>
     </div>
 
-    {% for content in contents %}
-    {% if content.section.title == section.title %}
     <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 pt-2">
+        {% for content in section.sectioncontent_set.all %}
         <div class="col mb-4">
             <div class="card">
                 {% if content.image %}
@@ -101,9 +98,8 @@
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
 </div>
 {% endfor %}
 
