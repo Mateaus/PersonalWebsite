@@ -1,8 +1,10 @@
 from django.contrib import admin
 from .models import Introduction, IntroductionContent, Section, SectionContent
 
+
 class IntroductionContentInline(admin.TabularInline):
     model = IntroductionContent
+
 
 @admin.register(Introduction)
 class IntroductionAdmin(admin.ModelAdmin):
@@ -17,8 +19,10 @@ class IntroductionAdmin(admin.ModelAdmin):
         """
         return Introduction.objects.all().count() == 0
 
+
 class SectionContentInline(admin.TabularInline):
     model = SectionContent
+
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):

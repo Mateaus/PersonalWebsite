@@ -1,14 +1,13 @@
-from django.shortcuts import render
-from .models import Introduction, IntroductionContent, Section, SectionContent
+from django.views.generic.base import TemplateView
 
-# Create your views here.
-def about_me(request):
-    introduction = Introduction.objects.all().first()
-    sections = Section.objects.all().order_by('pk')
+from .models import Introduction, Section
 
-    context = {
-        "introduction": introduction,
-        "sections": sections,
-    }
 
-    return render(request, 'aboutme/about_me_page_view.html', context=context)
+class AboutMeView(TemplateView):
+    template_name = "aboutme/about_me_page_view.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['introduction'] = Introduction.objects.all().first()
+        context['sections'] = Section.objects.all().order_by('pk')
+        return context
