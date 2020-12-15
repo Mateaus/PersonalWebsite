@@ -1,0 +1,103 @@
+/* Handles the top padding for the initial
+ * introduction div in about me. */
+.my-aboutme {
+    padding-top: 88px;
+}
+
+@media only screen and (min-width: 992px) {
+    .my-aboutme {padding-top: 224px; padding-bottom: 108px;}
+}
+
+/* Handles the top margin for the initial
+ * introduction title when the column overflows. */
+.my-introduction-title {
+    margin-top: 16px;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+    .my-introduction-title {
+        margin-top: 16px;
+        font-size: 36px;
+        margin-bottom: 32px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .my-introduction-title {
+        margin-top: 0%;
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .my-introduction-title {
+        margin-top: 0%;
+        font-size: 40px;
+        margin-bottom: 32px;
+    }
+}
+
+/* Handles the top margin for the initial
+ * introduction paragraphs when the column overflows. */
+.my-introduction-paragraph {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+    .my-introduction-paragraph {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .my-introduction-paragraph {
+        font-size: 17px;
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .my-introduction-paragraph {
+        font-size: 20px;
+        margin-bottom: 32px;
+    }
+}
+
+/* Handles the top padding for the sections
+ * inside the about me view. */
+ .my-group {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+@media screen and (min-width: 768px), (min-width: 600px) {
+    .my-group {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+}
+
+.my-title {
+    font-size: 36px;
+}
+
+.my-image {
+    width: 100%;
+    max-height: 540px;
+}
+
+@media only screen and (min-width: 992px) {
+    .my-image {
+        max-height: 450px;
+    }
+}
+
+.my-card-image {
+    height: 125px;
+    overflow: hidden;
+}

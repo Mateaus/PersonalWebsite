@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.utils.timezone import now
 from django.core.validators import FileExtensionValidator
+from django.core.exceptions import ValidationError
 
 
 class Tag(models.Model):

@@ -1,8 +1,13 @@
 {% extends 'base_page_view.html' %}
 {% load static %}
 
+{% block viewcss %}
+<!-- Projects CSS -->
+<link rel="stylesheet" href="{% static 'projects/dist/css/projects.css' %}">
+{% endblock viewcss %}
+
 {% block content %}
-<div class="page-title border-bottom">
+<div class="page-title border-bottom my-project">
     <h1 class="display-5 font-family-roboto">Projects</h1>
 </div>
 {% if all_projects %}
@@ -34,7 +39,7 @@
 {% endfor %}
 {% else %}
 <div>
-    <h2 class="display-5 font-family-roboto font-medium text-center my-5">No projects to display...</h1>
+    <h2 class="display-5 font-medium text-center my-5">No projects to display...</h1>
 </div>
 {% endif %}
 {% endblock %}

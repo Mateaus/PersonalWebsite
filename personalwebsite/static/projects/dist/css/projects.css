@@ -12,25 +12,11 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... } */
-.my-group {
-    padding-top: 0px;
+
+.my-project {
+    padding-top: 64px;
 }
 
-[class*="my-aboutme"] {
-    padding-top: 0%;
-}
-
-@media screen and (min-width: 768px), (min-width: 600px) {
-    .my-aboutme {padding-top: 15%;}
-}
-
-[class*="my-group"] {
-    padding-top: 0%;
-}
-
-@media screen and (min-width: 768px), (min-width: 600px) {
-    .my-group {padding-top: 30%;}
-}
 
 @media screen and (max-width: 576px) {
     .proj-desc {
@@ -48,35 +34,29 @@
     }
 }
 
-.font-family-roboto {
-    font-family: 'Roboto', sans-serif;
+@media screen and (min-width: 1200px) {
+    .tags {
+        margin-top: 3.5em;
+    }
 }
 
-.font-thin {
-    font-weight: 100;
+.tag-label {
+    /* background-color: #e4e6e8; */
+    background-color: rgb(228,230,232, 0.3);
+    color: rgb(0, 0, 0, 0.7);
+    border: 1px rgb(0, 0, 0, 0.7) solid;
+    border-radius: 2px;
+    padding: .2em .5em;
+    margin: 2px 2px 2px 0;
 }
 
-.font-light {
-    font-weight: 300;
+.tag-label:hover {
+    background-color: rgb(228,230,232, 0.6);
+    color: rgb(0, 0, 0, 1);
+    border: 1px rgb(0, 0, 0, 1) solid;
+    cursor: default;
 }
 
-.font-regular {
-    font-weight: 400;
-}
-
-.font-medium {
-    font-weight: 500;
-}
-
-.font-bold {
-    font-weight: 700;
-}
-
-.my-image {
-    width: 100%;
-}
-
-.image-div {
-    height: 125px;
-    overflow: hidden;
+.tags {
+    margin-bottom: 1em;
 }
