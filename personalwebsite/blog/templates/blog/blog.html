@@ -3,8 +3,49 @@
 
 {% block viewcss %}
 <!-- Blog CSS -->
+<link rel="stylesheet" href="{% static 'blog/dist/css/blog.css' %}">
 {% endblock viewcss %}
 
 {% block content %}
+
+<div class="my-blog">
+
+    <div class="row">
+
+        <div class="col-md-5 col-lg-4 col-xl-4">
+            <img class="rounded img-fluid" src="{% static 'images/placeholder.png' %}" alt="Empty">
+        </div>
+
+        <div class="col-md-7 col-lg-8 col-xl-8">
+            <h2 class="text-left font-bold">Lorem Ipsum passage</h2>
+            <p class="text-left font-medium">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                quisquam deserunt similique consequuntur
+                architecto? Iusto aliquid a, nihil mollitia veritatis eveniet! Perferendis, harum ipsam.
+                Laudantium,
+                assumenda dolore! Doloribus, nisi aliquid.</p>
+        </div>
+
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-md-5 col-lg-4 col-xl-4">
+            <img class="rounded img-fluid" src="{% static 'images/placeholder.png' %}" alt="Empty">
+        </div>
+
+        <div class="col-md-7 col-lg-8 col-xl-8">
+            <h2 class="text-left font-bold">Lorem Ipsum passage</h2>
+            <p class="text-left font-medium">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+                quisquam deserunt similique consequuntur
+                architecto? Iusto aliquid a, nihil mollitia veritatis eveniet! Perferendis, harum ipsam.
+                Laudantium,
+                assumenda dolore! Doloribus, nisi aliquid.</p>
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
