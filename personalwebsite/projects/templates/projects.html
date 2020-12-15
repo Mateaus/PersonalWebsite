@@ -27,7 +27,7 @@
                 <h5>{{project.title}}</h5>
                 {{project.description}}
             </div>
-            <div class="tags d-flex flex-wrap">
+            <div class="tags d-flex flex-wrap mt-1">
                 {% if project.tags.all %}
                 {% for tag in project.tags.all %}
                 <div class="tag-label">{{tag}}</div>
