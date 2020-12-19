@@ -1,0 +1,53 @@
+{% extends "base_page_view.html" %}
+{% load static %}
+
+{% block viewcss %}
+<!-- Blog CSS -->
+<link rel="stylesheet" href="{% static 'blog/dist/css/blog.css' %}">
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="{% static 'libs/prism/dist/css/prism.css' %}">
+{% endblock viewcss %}
+
+{% block content %}
+
+<div class="my-blog">
+    {% if post_detail %}
+
+    <div class="d-flex flex-column">
+        <h2 class="font-bold">{{ post_detail.post_overview.title }}</h2>
+
+        <div class="d-flex flex-row" style="margin-bottom: 8px;">
+            {% for tag in post_detail.post_overview.tags.all %}
+            <div class="rounded-text" style="margin-right: 8px;">
+                {{ tag.name }}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="d-flex flex-row">
+            {% with creation_date=post_detail.post_overview.creation_date|date:'F j, Y, P' %}
+            {% with modified_date=post_detail.post_overview.modified_date|date:'F j, Y, P' %}
+
+            {% if creation_date == modified_date %}
+            <p>{{ post_detail.post_overview.creation_date }}</p>
+            {% else %}
+            <p style="margin-right: 8px;">{{ post_detail.post_overview.creation_date }}</p>
+            <p>Update: {{ post_detail.post_overview.modified_date }} </p>
+            {% endif %}
+
+            {% endwith %}
+            {% endwith %}
+        </div>
+    </div>
+    <hr>
+    {{ post_detail.content|safe }}
+    
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block viewjs %}
+<!-- Prism JS-->
+<script src="{% static 'libs/prism/dist/js/prism.js' %}"></script>
+{% endblock viewjs %}

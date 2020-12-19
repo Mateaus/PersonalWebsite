@@ -4,20 +4,17 @@
 {% block viewcss %}
 <!-- Blog CSS -->
 <link rel="stylesheet" href="{% static 'blog/dist/css/blog.css' %}">
-
-<!-- Prism CSS -->
-<link rel="stylesheet" href="{% static 'libs/prism/dist/css/prism.css' %}">
 {% endblock viewcss %}
 
 {% block content %}
 
 <div class="my-blog">
 
-    {% if posts %}
-    {% for post in posts %}
+    {% if post_overviews %}
+    {% for post in post_overviews %}
     <div class="d-flex flex-column" style="padding: 18px 0;">
         <div>
-            <h3 class="font-bold blog-title"><a href="">{{ post.title }}</a></h3>
+            <h3 class="font-bold blog-title"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h3>
         </div>
 
         <p class="text-block">{{ post.overview }}</p>

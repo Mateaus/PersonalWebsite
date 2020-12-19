@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+a {
+    color: black;
+}
+
 .rounded-text {
     border: 1px solid;
     color: rgb(53, 53, 53);
