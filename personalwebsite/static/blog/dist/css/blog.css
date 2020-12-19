@@ -1,3 +1,76 @@
 .my-blog {
     padding-top: 96px;
+    margin: 0;
+}
+
+.rounded-text {
+    border: 1px solid;
+    color: rgb(53, 53, 53);
+    opacity: 1;
+    padding: 0px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 2px 2px;
+}
+
+.blog-title a {
+    text-decoration-line: none;
+}
+
+.blog-title a:link {
+    color: rgb(44, 44, 44);
+}
+
+.blog-title a:visited {
+    color: rgb(44, 44, 44);
+}
+
+.blog-title a:hover {
+    color: rgb(44, 44, 44);
+    text-shadow: 2px 2px rgb(210, 210, 210);
+}
+
+.blog-title a:active {
+    color: rgb(27, 27, 27);
+}
+
+.text-block {
+    font-size: 1rem;
+    word-wrap: break-word;
+    margin: 0 0 8px 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .my-blog {
+        margin: 0;
+    }
+
+    .text-block {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .my-blog {
+        margin: 0 4%;
+    }
+
+    .text-block {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .my-blog {
+        margin: 0 8%;
+    }
+
+    .text-block {
+        font-size: 1.1rem ;
+    }
 }

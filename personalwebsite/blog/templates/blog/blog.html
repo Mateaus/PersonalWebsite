@@ -4,48 +4,43 @@
 {% block viewcss %}
 <!-- Blog CSS -->
 <link rel="stylesheet" href="{% static 'blog/dist/css/blog.css' %}">
+
+<!-- Prism CSS -->
+<link rel="stylesheet" href="{% static 'libs/prism/dist/css/prism.css' %}">
 {% endblock viewcss %}
 
 {% block content %}
 
 <div class="my-blog">
 
-    <div class="row">
-
-        <div class="col-md-5 col-lg-4 col-xl-4">
-            <img class="rounded img-fluid" src="{% static 'images/placeholder.png' %}" alt="Empty">
+    {% if posts %}
+    {% for post in posts %}
+    <div class="d-flex flex-column" style="padding: 18px 0;">
+        <div>
+            <h3 class="font-bold blog-title"><a href="">{{ post.title }}</a></h3>
         </div>
 
-        <div class="col-md-7 col-lg-8 col-xl-8">
-            <h2 class="text-left font-bold">Lorem Ipsum passage</h2>
-            <p class="text-left font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                quisquam deserunt similique consequuntur
-                architecto? Iusto aliquid a, nihil mollitia veritatis eveniet! Perferendis, harum ipsam.
-                Laudantium,
-                assumenda dolore! Doloribus, nisi aliquid.</p>
-        </div>
+        <p class="text-block">{{ post.overview }}</p>
 
+        <div class="d-flex flex-row">
+            {% for tag in post.tags.all %}
+            <div class="rounded-text" style="margin-right: 8px;">
+                {{ tag.name }}
+            </div>
+            {% endfor %}
+            <div>{{ post.estimated_time }} min read</div>
+        </div>
     </div>
-
-    <div class="row mt-4">
-
-        <div class="col-md-5 col-lg-4 col-xl-4">
-            <img class="rounded img-fluid" src="{% static 'images/placeholder.png' %}" alt="Empty">
-        </div>
-
-        <div class="col-md-7 col-lg-8 col-xl-8">
-            <h2 class="text-left font-bold">Lorem Ipsum passage</h2>
-            <p class="text-left font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                quisquam deserunt similique consequuntur
-                architecto? Iusto aliquid a, nihil mollitia veritatis eveniet! Perferendis, harum ipsam.
-                Laudantium,
-                assumenda dolore! Doloribus, nisi aliquid.</p>
-        </div>
-
-    </div>
+    {% endfor %}
+    {% endif %}
 
 </div>
 
 {% endblock %}
+
+{% block viewjs %}
+<!-- Prism JS-->
+<script src="{% static 'libs/prism/dist/js/prism.js' %}"></script>
+<!-- Blog JS -->
+<script src="{% static 'blog/dist/js/blog.js' %}"></script>
+{% endblock viewjs %}
