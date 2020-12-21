@@ -1,140 +1,237 @@
 {% extends "base_page_view.html" %}
 {% load static %}
 
+{% block viewcss %}
+<!-- About CSS -->
+<link rel="stylesheet" href="{% static 'aboutme/dist/css/about.css' %}">
+{% endblock viewcss %}
+
 {% block content %}
 
 {% if introduction %}
 
-<div class="my-aboutme mt-5">
-    <div class="d-flex justify-content-center mb-5">
-        <h2 class="font-family-roboto font-bold">{{ introduction.first_name }} {{ introduction.last_name }}</h2>
-    </div>
+<div class="my-aboutme">
+    <div class="row">
 
-    <div class="d-flex flex-row justify-content-center">
-        <div class="row">
-            <div class="col">
-                {% if introduction.profile_image %}
-                <img class="rounded mx-auto d-block" src="{{ introduction.profile_image.url }}" height="400px"
-                    width="350px" alt="Empty">
+        <div class="col-md-12 col-lg-6 col-xl-6">
 
-                {% else %}
+            {% if introduction.profile_image %}
 
-                <img class="rounded mx-auto d-block" src="{% static 'images/profile.png' %}" height="400px"
-                    width="350px" alt="Empty">
+            <img class="rounded img-fluid my-image mx-auto d-block" src="{{ introduction.profile_image.url }}"
+                alt="Empty">
 
-                {% endif %}
-            </div>
-            <div class="col">
-                <h3 class="text-center font-family-roboto font-regular">{{ introduction.description }}</h3>
-            </div>
+            {% else %}
+
+            <img class="rounded img-fluid my-image" src="{% static 'images/placeholder.png' %}" alt="Empty">
+
+            {% endif %}
+
         </div>
+
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <h1 class="text-left my-introduction-title font-bold">
+                {{ introduction.title }}
+            </h1>
+
+            {% if introduction.introductioncontent_set.all %}
+                {% for content in introduction.introductioncontent_set.all %}
+                <p class="text-left my-introduction-paragraph font-medium">
+                    {{ content.paragraph }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+
     </div>
 </div>
 
 {% else %}
 
-<div class="my-aboutme mt-5">
-    <div class="d-flex justify-content-center mb-5">
-        <h2 class="font-family-roboto font-bold">First and Last Name</h2>
-    </div>
+<div class="my-aboutme">
+    <div class="row">
 
-    <div class="d-flex flex-row justify-content-center">
-        <div class="row">
-            <div class="col">
-                <img class="rounded mx-auto d-block" src="{% static 'images/profile.png' %}" height="400px"
-                    width="350px" alt="Empty">
-            </div>
-            <div class="col">
-                <h3 class="text-center font-family-roboto font-regular">Use the margin and padding spacing utilities to
-                    control how
-                    elements and components are spaced and
-                    sized. Bootstrap 4 includes a five-level scale for spacing utilities, based on a 1rem value default
-                    $spacer variable. Choose values for all viewports (e.g., .mr-3 for margin-right: 1rem), or pick
-                    responsive variants to target specific viewports (e.g., .mr-md-3 for margin-right: 1rem starting at
-                    the
-                    md breakpoint).</h3>
-            </div>
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <img class="rounded img-fluid my-image" src="{% static 'images/placeholder.png' %}" alt="Empty">
         </div>
+
+        <div class="col-md-12 col-lg-6 col-xl-6">
+            <h2 class="text-left my-introduction-title font-bold">Lorem Ipsum passage</h2>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <p class="text-left my-introduction-paragraph font-medium" style="font-size: 1.1rem;">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
+        </div>
+
     </div>
 </div>
 
 {% endif %}
 
-
 {% if sections %}
 
-    {% for section in sections %}
-    <div class="my-group">
-        <div class="page-title border-bottom">
-            <h1 class="display-4 font-family-roboto font-medium">{{ section.title }}</h1>
-        </div>
+{% for section in sections %}
+<div class="my-group">
+    <div class="page-title">
+        <h2 class="my-title font-medium">{{ section.title }}</h2>
+    </div>
 
-        {% for content in contents %}
-            {% if content.section.title == section.title %}
-            <div class="row row-cols-1 row-cols-md-3 mt-4">
-                <div class="col mb-4">
-                    <div class="card">
-                        {% if content.image %}
-                            <div class="image-div">
-                                <img src="{{ content.image.url }}" class="card-img-top rounded my-image"
-                                alt="Responsive image">
-                            </div>
-                        {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title font-family-roboto font-bold">{{ content.title }}</h5>
-                            <p class="card-text font-family-roboto font-regular">{{ content.description }}</p>
-                        </div>
-                    </div>
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 pt-2">
+        {% for content in section.sectioncontent_set.all %}
+        <div class="col mb-4">
+            <div class="card">
+                {% if content.image %}
+                <div class="my-card-image">
+                    <img src="{{ content.image.url }}" class="card-img-top rounded my-image" alt="Responsive image">
+                </div>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title font-bold">{{ content.title }}</h5>
+                    <p class="card-text font-regular">{{ content.description }}</p>
                 </div>
             </div>
-            {% endif %}
+        </div>
         {% endfor %}
     </div>
+</div>
 {% endfor %}
 
 {% else %}
 
 <div class="my-group">
-    <div class="page-title border-bottom">
-        <h1 class="display-4 font-family-roboto font-medium">Interests</h1>
+    <div class="page-title">
+        <h2 class="my-title font-medium">Section 1</h2>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 mt-4">
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 pt-2">
         <div class="col mb-4">
             <div class="card">
-                <div class="image-div">
-                    <img src="{% static 'images/potato.png' %}" class="card-img-top rounded my-image"
-                    alt="Responsive image">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title font-family-roboto font-bold">Placeholder Title</h5>
-                    <p class="card-text font-family-roboto font-regular">Placeholder description for each card.</p>
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
                 </div>
             </div>
         </div>
 
         <div class="col mb-4">
             <div class="card">
-                <div class="image-div">
-                    <img src="{% static 'images/potato.png' %}" class="card-img-top rounded my-image"
-                    alt="Responsive image">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title font-family-roboto font-bold">Placeholder Title</h5>
-                    <p class="card-text font-family-roboto font-regular">Placeholder description for each card.</p>
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
                 </div>
             </div>
         </div>
 
         <div class="col mb-4">
             <div class="card">
-                <div class="image-div">
-                    <img src="{% static 'images/potato.png' %}" class="card-img-top rounded my-image"
-                    alt="Responsive image">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title font-family-roboto font-bold">Placeholder Title</h5>
-                    <p class="card-text font-family-roboto font-regular">Placeholder description for each card.</p>
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-group">
+    <div class="page-title">
+        <h2 class="my-title font-medium">Section 2</h2>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 pt-2">
+        <div class="col mb-4">
+            <div class="card">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-4">
+            <div class="card">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-4">
+            <div class="card">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-4">
+            <div class="card">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-4">
+            <div class="card">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mb-4">
+            <div class="card">
+                <div class="my-card-image">
+                    <img src="{% static 'images/profile.png' %}" class="card-img-top rounded my-image"
+                        alt="Responsive image">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-bold">Placeholder Title</h5>
+                    <p class="card-text font-regular">Placeholder description for each card.</p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,70 @@
+h1, h2, h3, h4, h5 {
+    font-family: 'Cabin', sans-serif;
+}
+
+p {
+    font-family: 'Cabin', sans-serif;
+}
+
+a {
+    font-family: 'Cabin', sans-serif;
+}
+
+.nav-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+}
+
+.nav-item:hover {
+    background-color: rgb(228,230,232, 0.3);
+    color: black;
+    border: 1px black solid;
+    border-radius: 25px;
+    cursor: default;
+}
+
+.active-nav {
+    background-color: rgb(228,230,232, 0.8);
+    color: black !important;
+    border: 1px black solid;
+    border-radius: 25px;
+    cursor: default;
+}
+
+.active-nav:hover {
+    border: none;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+/* Handles the view name for mobile screens */
+#my-current-view {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    #my-current-view {
+        font-size: 24px;
+    }
+}
+
+/* Handles the navlinks on large screens */
+@media only screen and (min-width: 1200px) {
+    .nav-link {
+        font-size: 18px;
+    }
+}

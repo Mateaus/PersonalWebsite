@@ -7,31 +7,31 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link font-family-roboto font-medium {% if request.path == about_me %} active {% endif %}"
+                    <a class="nav-link font-family-roboto font-medium {% if request.path == about_me %} active-nav {% endif %}"
                         href="{% url 'about-me' %}">About me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-family-roboto font-medium {% if request.path == projects %} active {% endif %}"
+                    <a class="nav-link font-family-roboto font-medium {% if request.path == projects %} active-nav {% endif %}"
                         href="{% url 'projects' %}">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-family-roboto font-medium" href="#">Blog</a>
+                    <a class="nav-link font-family-roboto font-medium {% if request.path == blog %} active-nav {% endif %}" href="/">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-family-roboto font-medium {% if request.path == resume %} active {% endif %}"
-                        href="{% url 'resume' %}">Resume</a>
+                    <a class="nav-link font-family-roboto font-medium {% if request.path == resume %} active-nav {% endif %}"
+                        href="/">Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-family-roboto font-medium" href="#">Contact me</a>
+                    <a class="nav-link font-family-roboto font-medium {% if request.path == contact %} active-nav {% endif %}" href="/">Contact me</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav my-2 my-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link font-family-roboto font-medium" href="#">Github</a>
+                    <a class="nav-link font-family-roboto font-medium {% if request.path == github %} active-nav {% endif %}" href="#">Github</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-family-roboto font-medium" href="#">LinkedIn</a>
+                    <a class="nav-link font-family-roboto font-medium {% if request.path == linkedin %} active-nav {% endif %}" href="#">LinkedIn</a>
                 </li>
             </ul>
         </div>
