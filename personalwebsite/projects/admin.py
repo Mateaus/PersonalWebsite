@@ -17,6 +17,7 @@ class ProjectForm(forms.ModelForm):
 
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectForm
+    filter_horizontal = ('tags',)
 
 
 # Register your models here.

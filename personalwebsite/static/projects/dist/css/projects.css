@@ -17,7 +17,6 @@
     padding-top: 64px;
 }
 
-
 @media screen and (max-width: 576px) {
     .proj-desc {
         white-space: nowrap;
@@ -35,7 +34,6 @@
 }
 
 .tag-label {
-    /* background-color: #e4e6e8; */
     background-color: rgb(228,230,232, 0.3);
     color: rgb(0, 0, 0, 0.7);
     border: 1px rgb(0, 0, 0, 0.7) solid;
