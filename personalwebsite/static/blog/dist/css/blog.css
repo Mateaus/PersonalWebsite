@@ -23,6 +23,7 @@ a {
 }
 
 .blog-title a {
+    color: #333333;
     text-decoration-line: none;
 }
 
@@ -30,13 +31,13 @@ a {
     color: rgb(44, 44, 44);
 }
 
-.blog-title a:visited {
+/* .blog-title a:visited {
     color: rgb(44, 44, 44);
-}
+} */
 
 .blog-title a:hover {
     color: rgb(44, 44, 44);
-    text-shadow: 2px 2px rgb(210, 210, 210);
+    text-shadow: 1px 1px rgb(210, 210, 210);
 }
 
 .blog-title a:active {
@@ -76,5 +77,67 @@ a {
 
     .text-block {
         font-size: 1.1rem ;
+    }
+}
+
+[class*="arrow-"] {
+    border: solid #777777;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+}
+
+.arrow-right {
+    transform: rotate(-45deg);
+}
+
+.arrow-left {
+    transform: rotate(135deg);
+}
+
+.arrow-up {
+    transform: rotate(-135deg);
+}
+
+.arrow-down {
+    transform: rotate(45deg);
+}
+
+.my-footer-post {
+    
+}
+
+.my-footer-post a {
+    text-decoration: none;
+    display: block;
+    color: #777777;
+    border: 1px solid #777777;
+    border-radius: 2px;
+}
+
+.my-footer-post a:hover{
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.my-footer-post a:hover i{
+    border: solid #000000;
+    border-width: 0 3px 3px 0;
+}
+
+.my-footer-post a:hover strong{
+    color: black !important;
+}
+
+.my-footer-post a:hover h6{
+    color: black !important;
+}
+
+.vert {
+    margin: 4px 0;
+}
+
+@media (min-width:768px) {
+    .vert {
+        margin: 0;
     }
 }
