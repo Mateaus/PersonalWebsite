@@ -11,6 +11,7 @@ function truncateText(string, charIndex) {
 function textBlock() {
     var truncateAtIndex = 200;
     var text = document.getElementsByClassName("text-block");
+    console.log(text);
     for (i = 0; i < text.length; i++) {
         var t = truncateText(text[i].textContent, truncateAtIndex)
         text[i].textContent = t;

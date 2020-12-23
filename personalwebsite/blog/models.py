@@ -11,7 +11,7 @@ class Tag(models.Model):
         return self.name
 
 
-class PostOverview(models.Model):
+class Post(models.Model):
     title = models.CharField(max_length=256)
     overview = models.TextField()
     tags = models.ManyToManyField(Tag)
@@ -22,10 +22,12 @@ class PostOverview(models.Model):
 
 class PostDetail(models.Model):
     post_overview = models.OneToOneField(
-        PostOverview, on_delete=models.CASCADE)
+        Post, on_delete=models.CASCADE)
     content = HTMLField()
-    previous_post = models.ForeignKey('self', related_name='previous', on_delete=models.SET_NULL, blank=True, null=True)
-    next_post = models.ForeignKey('self', related_name='next', on_delete=models.SET_NULL, blank=True, null=True)
+    previous_post = models.ForeignKey(
+        'self', related_name='previous', on_delete=models.SET_NULL, blank=True, null=True)
+    next_post = models.ForeignKey(
+        'self', related_name='next', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.post_overview.title

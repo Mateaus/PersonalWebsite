@@ -8,24 +8,22 @@
 
 {% block content %}
 
-<div class="my-blog">
+<div class="blog-container">
 
-    {% if post_overviews %}
-    {% for post in post_overviews %}
-    <div class="d-flex flex-column" style="padding: 18px 0;">
+    {% if posts %}
+    {% for post in posts %}
+    <div class="d-flex flex-column post-container">
         <div>
-            <h3 class="font-bold blog-title"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h3>
+            <h3 class="post-title text-break"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h3>
         </div>
 
-        <p class="text-block">{{ post.overview }}</p>
+        <p class="post-overview">{{ post.overview }}</p>
 
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row tag-container">
             {% for tag in post.tags.all %}
-            <div class="rounded-text" style="margin-right: 8px;">
-                {{ tag.name }}
-            </div>
+            <div class="rounded-tag">{{ tag.name }}</div>
             {% endfor %}
-            <div>{{ post.estimated_time }} min read</div>
+            <p class="my-0">{{ post.estimated_time }} min read</p>
         </div>
     </div>
     {% endfor %}
