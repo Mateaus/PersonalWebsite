@@ -16,7 +16,6 @@
 
     <div class="d-flex flex-column">
         <h1 class="post-title text-break">{{ post_detail.post_overview.title }}</h1>
-
         <div class="date-container">
             {% with creation_date=post_detail.post_overview.creation_date|date:'F j, Y, P' %}
             {% with modified_date=post_detail.post_overview.modified_date|date:'F j, Y, P' %}
@@ -79,7 +78,7 @@
     <div class="d-flex flex-row mb-3 tag-container">
         <p>Tags:</p>
         {% for tag in post_detail.post_overview.tags.all %}
-        <div class="rounded-tag">{{ tag.name }}</div>
+        <div class="rounded-tag"><p>{{ tag.name }}</p></div>
         {% endfor %}
     </div>
 
@@ -104,7 +103,7 @@
                             </div>
                             <div class="row no-gutters">
                                 <div class="col-12">
-                                    <h6 class="font-weight-bold text-break">{{post_detail.previous_post.post_overview.title }}</h6>
+                                    <h4 class="font-weight-bold text-break">{{post_detail.previous_post.post_overview.title }}</h4>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +124,7 @@
                             </div>
                             <div class="row no-gutters">
                                 <div class="col-12">
-                                    <h6 class="font-weight-bold text-break">{{post_detail.next_post.post_overview.title }}</h6>
+                                    <h4 class="font-weight-bold text-break">{{post_detail.next_post.post_overview.title }}</h4>
                                 </div>
                             </div>
                         </div>
