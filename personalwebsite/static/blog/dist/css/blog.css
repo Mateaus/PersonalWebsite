@@ -3,7 +3,11 @@
     margin: 0;
 }
 
-.post-container {
+.post-list-container > div:first-of-type {
+    padding: 0 0 18px 0;
+}
+
+.post-list-container > div:not(:first-of-type) {
     padding: 18px 0;
 }
 

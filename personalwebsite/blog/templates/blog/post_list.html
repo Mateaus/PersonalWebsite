@@ -11,22 +11,27 @@
 <div class="blog-container">
 
     {% if posts %}
-    {% for post in posts %}
-    <div class="d-flex flex-column post-container">
-        <div>
-            <h2 class="post-title text-break"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h2>
-        </div>
 
-        <p class="post-overview">{{ post.overview }}</p>
+    <div class="post-list-container">
+        {% for post in posts %}
+        <div class="d-flex flex-column">
+            <div>
+                <h2 class="post-title text-break"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h2>
+            </div>
 
-        <div class="d-flex flex-row tag-container">
-            {% for tag in post.tags.all %}
-            <div class="rounded-tag"><p>{{ tag.name }}</p></div>
-            {% endfor %}
-            <p class="my-0">{{ post.estimated_time }} min read</p>
+            <p class="post-overview">{{ post.overview }}</p>
+
+            <div class="d-flex flex-row tag-container">
+                {% for tag in post.tags.all %}
+                <div class="rounded-tag">
+                    <p>{{ tag.name }}</p>
+                </div>
+                {% endfor %}
+                <p class="my-0">{{ post.estimated_time }} min read</p>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
     {% endif %}
 
 </div>
