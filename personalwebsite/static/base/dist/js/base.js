@@ -69,15 +69,16 @@ function showDesktopNavBar() {
     var activeLink = navBarCollapse.getElementsByClassName("active")[0];
     if (activeLink) {
         activeLink.style.display = "block";
+
+        var currentViewTitle = document.getElementById("my-current-view");
+        currentViewTitle.style.display = "none";
+        currentViewTitle.textContent = "";
     }
 
     var navBar = document.getElementsByClassName("navbar")[0];
     if (navBar) {
         navBar.style.justifyContent = "space-between";
     }
-
-    var currentViewTitle = document.getElementById("my-current-view");
-    currentViewTitle.style.display = "none";
 }
 
 function showMobileNavBar() {
@@ -87,16 +88,16 @@ function showMobileNavBar() {
     var activeLink = navBarCollapse.getElementsByClassName("active")[0];
     if (activeLink) {
         activeLink.style.display = "none";
+
+        var currentViewTitle = document.getElementById("my-current-view");
+        currentViewTitle.style.display = "block";
+        currentViewTitle.textContent = activeLink.text;
     }
 
     var navBar = document.getElementsByClassName("navbar")[0];
     if (navBar) {
         navBar.style.justifyContent = "flex-start";
     }
-
-    var currentViewTitle = document.getElementById("my-current-view");
-    currentViewTitle.style.display = "block";
-    currentViewTitle.textContent = activeLink.text;
 }
 
 window.addEventListener('load', onWindowResize);
