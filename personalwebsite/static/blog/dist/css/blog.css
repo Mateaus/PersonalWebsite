@@ -13,10 +13,11 @@
 
 .post-title {
     font-weight: bold;
+    color: #333333;
 }
 
 .post-title a {
-    color: #333333;
+    color: inherit;
     text-decoration-line: none;
 }
 
@@ -112,8 +113,12 @@
     border-radius: 2px;
 }
 
+.my-footer-post h4 {
+    color: inherit;
+}
+
 .my-footer-post a:hover{
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid #000000;
 }
 
 .my-footer-post a:hover i{
@@ -122,11 +127,11 @@
 }
 
 .my-footer-post a:hover strong{
-    color: black !important;
+    color: #000000;
 }
 
 .my-footer-post a:hover h4{
-    color: black !important;
+    color: #000000;
 }
 
 .vert {
