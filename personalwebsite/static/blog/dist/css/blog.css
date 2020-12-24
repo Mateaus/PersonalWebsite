@@ -1,5 +1,5 @@
 .blog-container {
-    padding-top: 96px;
+    padding-top: 64px;
     margin: 0;
 }
 
@@ -125,7 +125,7 @@
     color: black !important;
 }
 
-.my-footer-post a:hover h6{
+.my-footer-post a:hover h4{
     color: black !important;
 }
 
@@ -145,13 +145,14 @@
 
 @media only screen and (min-width: 992px) {
     .blog-container {
-        margin: 0 4%;
+        padding-left: 44px;
+        padding-right: 44px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .blog-container {
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 124px;
+        padding-right: 124px;
     }
 }
