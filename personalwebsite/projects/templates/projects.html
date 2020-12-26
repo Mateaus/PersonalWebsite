@@ -15,7 +15,7 @@
 <div class="row">
     <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 text-center my-3">
         {% if project.cover_image %}
-        <a><img src="{{project.cover_image.url}}" height="256px" width="256px" style="border: 1px solid black;"></a>
+        <a><img src="{{ project.cover_image.url }}" height="256px" width="256px" style="border: 1px solid black;"></a>
         {% else %}
         <a><img src="../media/project/cover_images/empty.jpg" height="256px" width="256px"
                 style="border: 1px solid black; position: relative;"></a>
@@ -24,13 +24,13 @@
     <div class="col-xl col-lg-8">
         <div class="text-justify">
             <div class="proj-desc">
-                <h5>{{project.title}}</h5>
-                {{project.description}}
+                <h5>{{ project.title }}</h5>
+                {{ project.description }}
             </div>
             <div class="tags d-flex flex-wrap mt-1">
                 {% if project.tags.all %}
                 {% for tag in project.tags.all %}
-                <div class="tag-label">{{tag}}</div>
+                <div class="tag-label">{{ tag }}</div>
                 {% endfor %}
                 {% endif %}
             </div>
