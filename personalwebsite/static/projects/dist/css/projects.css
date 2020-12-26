@@ -1,7 +1,21 @@
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... } */
+
 .my-project {
     padding-top: 64px;
 }
-
 
 @media screen and (max-width: 576px) {
     .proj-desc {
@@ -17,4 +31,20 @@
     .proj-desc {
         margin-top: .75em;
     }
+}
+
+.tag-label {
+    background-color: rgb(228,230,232, 0.3);
+    color: rgb(0, 0, 0, 0.7);
+    border: 1px rgb(0, 0, 0, 0.7) solid;
+    border-radius: 2px;
+    padding: .2em .5em;
+    margin: 2px 10px 2px 0px;
+}
+
+.tag-label:hover {
+    background-color: rgb(228,230,232, 0.6);
+    color: rgb(0, 0, 0, 1);
+    border: 1px rgb(0, 0, 0, 1) solid;
+    cursor: default;
 }

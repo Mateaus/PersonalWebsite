@@ -10,28 +10,39 @@
 <div class="page-title border-bottom my-project">
     <h1 class="display-5 font-family-roboto">Projects</h1>
 </div>
-{% if all_projects %}
-{% for project in all_projects %}
-<div class="row">
-</div>
+{% if project_list %}
+{% for project in project_list %}
 <div class="row">
     <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 text-center my-3">
         {% if project.cover_image %}
-        <a><img src="{{project.cover_image.url}}" height="256px" width="256px" style="border: 1px solid black;"></a>
+        <a><img src="{{ project.cover_image.url }}" height="256px" width="256px" style="border: 1px solid black;"></a>
         {% else %}
-        <a><img src="../media/project/cover_images/empty.jpg" height="256px" width="256px" style="border: 1px solid black; position: relative;"></a>
+        <a><img src="../media/project/cover_images/empty.jpg" height="256px" width="256px"
+                style="border: 1px solid black; position: relative;"></a>
         {% endif %}
     </div>
     <div class="col-xl col-lg-8">
         <div class="text-justify">
             <div class="proj-desc">
-                <h5>{{project.title}}</h5>    
-                {{project.description}}
+                <h5>{{ project.title }}</h5>
+                {{ project.description }}
+            </div>
+            <div class="tags d-flex flex-wrap mt-1">
+                {% if project.tags.all %}
+                {% for tag in project.tags.all %}
+                <div class="tag-label">{{ tag }}</div>
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
 {% endfor %}
+<div class="d-flex justify-content-end pages">
+    {% if all_projects|length > 3 %}
+    {% include 'pagination.html' with page=project_list %}
+    {% endif %}
+</div>
 {% else %}
 <div>
     <h2 class="display-5 font-medium text-center my-5">No projects to display...</h1>
