@@ -1,6 +1,7 @@
 {% load static %}
 {% url 'about-me' as about_me %}
 {% url 'projects' as projects %}
+{% url 'blog' as blog %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,17 +28,16 @@
 
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: white;">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light justify-content-start navbar-container">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <a id="my-current-view" class="navbar-brand font-medium"
-                style="margin: 0 0 0 0; padding-left: 16px; display: none;" href="">Navbar</a>
+            <a id="my-current-view" class="navbar-brand font-medium m-0 pl-3 d-block d-lg-none" href=""></a>
 
-            <div class="collapse navbar-collapse container" id="navbarCollapse">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_me %}active{% endif %}"
@@ -48,7 +48,8 @@
                             href="{% url 'projects' %}">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link {% if request.path == blog %}active{% endif %}"
+                            href="{% url 'blog' %}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>

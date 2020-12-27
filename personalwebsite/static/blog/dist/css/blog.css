@@ -1,0 +1,162 @@
+.blog-container {
+    padding-top: 64px;
+    margin: 0;
+}
+
+.post-list-container > div:first-of-type {
+    padding: 0 0 18px 0;
+}
+
+.post-list-container > div:not(:first-of-type) {
+    padding: 18px 0;
+}
+
+.post-title {
+    font-weight: bold;
+}
+
+.post-title a {
+    color: inherit;
+    text-decoration-line: none;
+}
+
+.post-overview {
+    word-wrap: break-word;
+    margin: 0 0 8px 0;
+}
+
+.post-icon {
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    fill: #777777;
+}
+
+.post-date {
+    margin: 0;
+    font-size: 14.6px;
+    color: #777777;
+}
+
+[class*="date-"] {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Inside date container, apply style
+ * on all divs, except the last. */
+.date-container > div:not(:last-of-type) {
+    margin-right: 8px;
+}
+
+.post-content p {
+    font-size: calc(16px * var(--font-scale));
+}
+
+/* Inside tag container, apply style
+ * on all elements, except the last. */
+.tag-container > *:not(:last-child) {
+    margin: 0 8px 0 0;
+}
+
+.rounded-tag {
+    border: 1px solid;
+    color: rgb(53, 53, 53);
+    opacity: 1;
+    padding: 0px 8px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 2px 2px;
+}
+
+.rounded-tag p {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+}
+
+.post-direction {
+    font-size: 12.8px;
+}
+
+[class*="arrow-"] {
+    border: solid #777777;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+}
+
+.arrow-right {
+    transform: rotate(-45deg);
+}
+
+.arrow-left {
+    transform: rotate(135deg);
+}
+
+.arrow-up {
+    transform: rotate(-135deg);
+}
+
+.arrow-down {
+    transform: rotate(45deg);
+}
+
+.my-footer-post a {
+    text-decoration: none;
+    display: block;
+    color: #777777;
+    border: 1px solid #777777;
+    border-radius: 2px;
+}
+
+.my-footer-post h4 {
+    color: inherit;
+}
+
+.my-footer-post a:hover{
+    border: 1px solid #000000;
+}
+
+.my-footer-post a:hover i{
+    border: solid #000000;
+    border-width: 0 3px 3px 0;
+}
+
+.my-footer-post a:hover strong{
+    color: #000000;
+}
+
+.my-footer-post a:hover h4{
+    color: #000000;
+}
+
+.vert {
+    margin: 4px 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .blog-container {
+        margin: 0;
+    }
+
+    .vert {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .blog-container {
+        padding-left: 44px;
+        padding-right: 44px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .blog-container {
+        padding-left: 124px;
+        padding-right: 124px;
+    }
+}
