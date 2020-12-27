@@ -66,7 +66,7 @@ function hideCurrentView() {
     var navBarCollapse = document.getElementById("navbarCollapse");
     // navBarCollapse.classList.add("container");
 
-    var activeLink = navBarCollapse.getElementsByClassName("active")[0];
+    var activeLink = navBarCollapse.getElementsByClassName("active-nav")[0];
     if (activeLink) {
         activeLink.style.display = "block";
 
@@ -79,7 +79,7 @@ function showCurrentView() {
     var navBarCollapse = document.getElementById("navbarCollapse");
     // navBarCollapse.classList.remove("container");
 
-    var activeLink = navBarCollapse.getElementsByClassName("active")[0];
+    var activeLink = navBarCollapse.getElementsByClassName("active-nav")[0];
     if (activeLink) {
         activeLink.style.display = "none";
 
