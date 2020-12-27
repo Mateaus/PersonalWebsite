@@ -67,6 +67,11 @@ a {
     font-weight: 700;
 }
 
+.navbar-container {
+    background-color: white;
+    padding: 8px 16px;
+}
+
 /* Handles the view name for mobile screens */
 #my-current-view {
     font-size: calc(22px * var(--font-scale));
@@ -75,6 +80,13 @@ a {
 @media only screen and (min-width: 768px) {
     #my-current-view {
         font-size: calc(24px * var(--font-scale));
+    }
+}
+
+@media(min-width: 992px) {
+    .navbar-container {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 

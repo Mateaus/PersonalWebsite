@@ -20,7 +20,7 @@
                 <a href="{% url 'post' post.pk %}">{{ post.title }}</a>
             </h2>
 
-            <p class="post-overview">{{ post.overview }}</p>
+            <p class="post-overview text-break">{{ post.overview }}</p>
 
             <div class="d-flex flex-row tag-container">
                 {% for tag in post.tags.all %}

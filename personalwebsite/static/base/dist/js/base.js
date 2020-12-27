@@ -41,62 +41,50 @@ function isExtraSmallScreen(width) {
 
 /* Handles events when the screen width is greater or equal to 1200px */
 function onLargeScreen() {
-    showDesktopNavBar();
+    hideCurrentView();
 }
 
 /* Handles events when the screen width is greater or equal to 992px
  * and less than 1200px */
 function onMediumScreen() {
-    showDesktopNavBar();
+    hideCurrentView();
 }
 
 /* Handles events when the screen width is greater or equal to 768px
  * and less than 992px */
 function onSmallScreen() {
-    showMobileNavBar();
+    showCurrentView();
 }
 
 /* Handles events when the screen width is greater or equal to 0px
  * and less than 768px */
 function onExtraSmallScreen() {
-    showMobileNavBar();
+    showCurrentView();
 }
 
-function showDesktopNavBar() {
+function hideCurrentView() {
     var navBarCollapse = document.getElementById("navbarCollapse");
-    navBarCollapse.classList.add("container");
+    // navBarCollapse.classList.add("container");
 
     var activeLink = navBarCollapse.getElementsByClassName("active")[0];
     if (activeLink) {
         activeLink.style.display = "block";
 
         var currentViewTitle = document.getElementById("my-current-view");
-        currentViewTitle.style.display = "none";
         currentViewTitle.textContent = "";
-    }
-
-    var navBar = document.getElementsByClassName("navbar")[0];
-    if (navBar) {
-        navBar.style.justifyContent = "space-between";
     }
 }
 
-function showMobileNavBar() {
+function showCurrentView() {
     var navBarCollapse = document.getElementById("navbarCollapse");
-    navBarCollapse.classList.remove("container");
+    // navBarCollapse.classList.remove("container");
 
     var activeLink = navBarCollapse.getElementsByClassName("active")[0];
     if (activeLink) {
         activeLink.style.display = "none";
 
         var currentViewTitle = document.getElementById("my-current-view");
-        currentViewTitle.style.display = "block";
         currentViewTitle.textContent = activeLink.text;
-    }
-
-    var navBar = document.getElementsByClassName("navbar")[0];
-    if (navBar) {
-        navBar.style.justifyContent = "flex-start";
     }
 }
 

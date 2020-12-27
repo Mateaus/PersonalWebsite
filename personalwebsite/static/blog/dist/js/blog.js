@@ -8,14 +8,14 @@ function truncateText(string, charIndex) {
     return string.substring(0, charIndex) + ' ...';
 }
 
-function textBlock() {
+function ellipsisPostOverviews() {
     var truncateAtIndex = 200;
-    var text = document.getElementsByClassName("text-block");
-    console.log(text);
+    var text = document.getElementsByClassName("post-overview");
+
     for (i = 0; i < text.length; i++) {
         var t = truncateText(text[i].textContent, truncateAtIndex)
         text[i].textContent = t;
     }
 }
 
-window.addEventListener('load', textBlock);
+window.addEventListener('load', ellipsisPostOverviews);
