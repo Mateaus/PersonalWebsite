@@ -10,15 +10,15 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav nav-dark mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link {% if request.path == about_me %}active-nav{% endif %}"
+                <a class="nav-link {% if request.path == about_me %}active{% endif %}"
                     href="{% url 'about-me' %}">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% if request.path == projects %}active-nav{% endif %}"
+                <a class="nav-link {% if request.path == projects %}active{% endif %}"
                     href="{% url 'projects' %}">Projects</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% if request.path == blog %}active-nav{% endif %}"
+                <a class="nav-link {% if request.path == blog %}active{% endif %}"
                     href="{% url 'blog' %}">Blog</a>
             </li>
             <li class="nav-item">
