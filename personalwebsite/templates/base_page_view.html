@@ -1,6 +1,7 @@
 {% load static %}
 {% url 'about-me' as about_me %}
 {% url 'projects' as projects %}
+{% url 'blog' as blog %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,8 @@
 
     <header>
         <!-- Fixed navbar -->
-        {% include "navbar.html" %}
+        {% include 'navigation.html' %}
+
     </header>
 
     <div class="container">

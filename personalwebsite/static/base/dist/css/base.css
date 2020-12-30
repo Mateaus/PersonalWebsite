@@ -1,42 +1,57 @@
-h1, h2, h3, h4, h5 {
+:root {
+    --font-default-color: #333333;
+    --font-scale: 0.95;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --font-scale: 1;
+    }
+}
+
+@media(min-width: 992px) {
+    :root {
+        --font-scale: 1.05;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Cabin', sans-serif;
+    color: var(--font-default-color);
+}
+
+h1 {
+    font-size: calc(2em * var(--font-scale));
+}
+
+h2 {
+    font-size: calc(1.5em * var(--font-scale));
+}
+
+h3 {
+    font-size: calc(1.17em * var(--font-scale));
+}
+
+h4 {
+    font-size: calc(1em * var(--font-scale));
+}
+
+h5 {
+    font-size: calc(0.83em * var(--font-scale));
+}
+
+h6 {
+    font-size: calc(0.67em * var(--font-scale));
 }
 
 p {
+    font-size: calc(1em * var(--font-scale));
     font-family: 'Cabin', sans-serif;
+    color: var(--font-default-color);
 }
 
 a {
     font-family: 'Cabin', sans-serif;
-}
-
-.nav-text {
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-
-.nav-item {
-    font-size: 1.2rem;
-}
-
-.nav-item:hover {
-    background-color: rgb(228,230,232, 0.3);
-    color: black;
-    border: 1px black solid;
-    border-radius: 25px;
-    cursor: default;
-}
-
-.active-nav {
-    background-color: rgb(228,230,232, 0.8);
-    color: black !important;
-    border: 1px black solid;
-    border-radius: 25px;
-    cursor: default;
-}
-
-.active-nav:hover {
-    border: none;
 }
 
 .font-regular {
@@ -51,20 +66,25 @@ a {
     font-weight: 700;
 }
 
+.navbar-container {
+    background-color: white;
+    padding: 8px 16px;
+}
+
 /* Handles the view name for mobile screens */
 #my-current-view {
-    font-size: 20px;
+    font-size: calc(22px * var(--font-scale));
 }
 
 @media only screen and (min-width: 768px) {
     #my-current-view {
-        font-size: 24px;
+        font-size: calc(24px * var(--font-scale));
     }
 }
 
-/* Handles the navlinks on large screens */
-@media only screen and (min-width: 1200px) {
-    .nav-link {
-        font-size: 18px;
+@media(min-width: 992px) {
+    .navbar-container {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }

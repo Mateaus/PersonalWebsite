@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'aboutme.apps.AboutmeConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
-    'projects.apps.ProjectsConfig'
+    'projects.apps.ProjectsConfig',
+    'tinymce'
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,19 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", 'https')
+
+
+# Tinymce settings
+TINYMCE_DEFAULT_CONFIG = {
+    # "selector": "textarea",
+    "width": "auto",
+    "height": "320px",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": "fullscreen insertdatetime media table paste code codesample help wordcount",
+    "force_br_newlines": False,
+    "force_p_newlines ": False,
+    "forced_root_block": "",
+}
+
+# TINYMCE_SPELLCHECKER = True
+# TINYMCE_COMPRESSOR = True

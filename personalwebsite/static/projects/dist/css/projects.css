@@ -13,8 +13,8 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... } */
 
-.my-project {
-    padding-top: 48px;
+.proj-main-content {
+    margin-top: 64px;
 }
 
 @media screen and (max-width: 576px) {
