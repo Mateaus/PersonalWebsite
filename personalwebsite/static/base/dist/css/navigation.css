@@ -1,0 +1,33 @@
+/* Select all classes with nav-item */
+.nav-item {
+    margin: 0 0.1rem; /* add margin spacing left and right */
+}
+
+/* Select all elements containing the active class inside the element
+ * containing the nav-item class */
+.nav-item > .active {
+    color: white !important;
+    background-color: rgb(100, 100, 100);
+    border-radius: 0.25rem;
+}
+
+/* Select only the a tag elements inside nav-item who doesn't contain
+ * the class active, then apply effects on hover */
+.nav-item > a:not(.active):hover {
+    padding: 6px; /* Remove the 2px padding caused by border */
+    border: 2px solid rgba(155, 155, 155, 0.2);
+    border-radius: 0.25rem;
+}
+
+/* Handles the navlinks on large screens */
+@media only screen and (min-width: 1200px) {
+    .nav-link {
+        font-size: calc(16px * var(--font-scale));
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .nav-link {
+        padding-left: 10px !important;
+    }
+}

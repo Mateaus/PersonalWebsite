@@ -15,7 +15,6 @@
     }
 }
 
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cabin', sans-serif;
     color: var(--font-default-color);
@@ -87,12 +86,5 @@ a {
     .navbar-container {
         padding-left: 5%;
         padding-right: 5%;
-    }
-}
-
-/* Handles the navlinks on large screens */
-@media only screen and (min-width: 1200px) {
-    .nav-link {
-        font-size: calc(16px * var(--font-scale));
     }
 }
