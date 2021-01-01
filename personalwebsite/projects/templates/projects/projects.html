@@ -1,5 +1,6 @@
 {% extends 'base_page_view.html' %}
 {% load static %}
+{% load tags %}
 
 {% block viewcss %}
 <!-- Projects CSS -->
@@ -27,12 +28,8 @@
                 <h5>{{ project.title }}</h5>
                 {{ project.description }}
             </div>
-            <div class="tags d-flex flex-wrap mt-1">
-                {% if project.tags.all %}
-                {% for tag in project.tags.all %}
-                <div class="tag-label">{{ tag }}</div>
-                {% endfor %}
-                {% endif %}
+            <div class="tags">
+                {% show_tags project %}
             </div>
         </div>
     </div>

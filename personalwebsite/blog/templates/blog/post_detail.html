@@ -1,5 +1,6 @@
 {% extends "base_page_view.html" %}
 {% load static %}
+{% load tags %}
 
 {% block viewcss %}
 <!-- Blog CSS -->
@@ -75,13 +76,10 @@
 
     <hr>
 
-    <div class="d-flex flex-row mb-3 tag-container">
+    <div class="tags">
         <p>Tags:</p>
-        {% for tag in post_detail.post_overview.tags.all %}
-        <div class="rounded-tag"><p>{{ tag.name }}</p></div>
-        {% endfor %}
+        {% show_tags post_detail.post_overview %}
     </div>
-
 
     {% if post_detail.previous_post or post_detail.next_post %}
     <div class="my-footer-post">

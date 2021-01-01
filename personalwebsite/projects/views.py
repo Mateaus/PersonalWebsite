@@ -19,4 +19,4 @@ def projects(request):
         'all_projects': all_projects,
         'project_list': project_list
     }
-    return render(request, 'projects.html', context)
+    return render(request, 'projects/projects.html', context)

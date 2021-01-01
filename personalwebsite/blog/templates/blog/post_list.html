@@ -1,5 +1,6 @@
 {% extends "base_page_view.html" %}
 {% load static %}
+{% load tags %}
 
 {% block viewcss %}
 <!-- Blog CSS -->
@@ -22,12 +23,8 @@
 
             <p class="post-overview text-break">{{ post.overview }}</p>
 
-            <div class="d-flex flex-row tag-container">
-                {% for tag in post.tags.all %}
-                <div class="rounded-tag">
-                    <p>{{ tag.name }}</p>
-                </div>
-                {% endfor %}
+            <div class="tags">
+                {% show_tags post %}
                 <p class="my-0">{{ post.estimated_time }} min read</p>
             </div>
         </div>
