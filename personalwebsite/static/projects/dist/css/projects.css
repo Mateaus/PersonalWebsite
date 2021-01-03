@@ -1,3 +1,21 @@
+.project-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media screen and (max-width: 991px) {
+  .project-main {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 .project {
   position: relative;
   margin-top: 50px;

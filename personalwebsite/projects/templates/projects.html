@@ -8,9 +8,9 @@
 
 {% block content %}
 {% if project_list %}
-<div class="d-flex justify-content-around flex-wrap">
+<div class="project-main">
     {% for project in project_list %}
-    <div class="project">
+    <div class="project ml-1">
         <img src="{% static 'images/potato.png' %}" alt="">
         <div class="title">{{project.title}}</div>
         <div class="overlay"></div>

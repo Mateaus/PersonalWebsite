@@ -1,3 +1,14 @@
+.project-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    @media screen and (max-width: 991px) {
+        justify-content: space-around;
+    }
+
+}
+
 .project {
     position: relative;
     margin-top: 50px;
