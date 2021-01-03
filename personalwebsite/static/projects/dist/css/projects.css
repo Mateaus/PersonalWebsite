@@ -1,50 +1,81 @@
-/* // Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... } */
-
-.my-project {
-    padding-top: 64px;
+.project {
+  position: relative;
+  margin-top: 50px;
+  width: 350px;
+  height: 200px;
 }
 
-@media screen and (max-width: 576px) {
-    .proj-desc {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 80%;
-        display: block;
-        overflow: hidden;
-    }
+.project:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (min-width: 992px) {
-    .proj-desc {
-        margin-top: .75em;
-    }
+.project:hover .title {
+  top: 60px;
 }
 
-.tag-label {
-    background-color: rgb(228,230,232, 0.3);
-    color: rgb(0, 0, 0, 0.7);
-    border: 1px rgb(0, 0, 0, 0.7) solid;
-    border-radius: 2px;
-    padding: .2em .5em;
-    margin: 2px 10px 2px 0px;
+.project:hover .button {
+  opacity: 1;
+  bottom: 3em;
 }
 
-.tag-label:hover {
-    background-color: rgb(228,230,232, 0.6);
-    color: rgb(0, 0, 0, 1);
-    border: 1px rgb(0, 0, 0, 1) solid;
-    cursor: default;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: background 0.5s ease;
+  transition: background 0.5s ease;
 }
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.title {
+  position: absolute;
+  width: 350px;
+  left: 0;
+  top: 30px;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  -webkit-transition: top .5s ease;
+  transition: top .5s ease;
+}
+
+.button {
+  position: absolute;
+  width: 350px;
+  bottom: 0.5em;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity .35s ease;
+  transition: opacity .35s ease;
+  -webkit-transition: bottom .35s ease;
+  transition: bottom .35s ease;
+}
+
+.button a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.button:hover a {
+  background-color: white;
+  color: black;
+}
+/*# sourceMappingURL=projects.css.map */
