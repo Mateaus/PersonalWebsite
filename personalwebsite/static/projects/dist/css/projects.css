@@ -32,7 +32,7 @@
   top: 60px;
 }
 
-.project:hover .button {
+.project:hover .btn-wrapper {
   opacity: 1;
   bottom: 3em;
 }
@@ -70,7 +70,7 @@ img {
   transition: top .5s ease;
 }
 
-.button {
+.btn-wrapper {
   position: absolute;
   width: 350px;
   bottom: 0.5em;
@@ -82,9 +82,9 @@ img {
   transition: bottom .35s ease;
 }
 
-.button a {
+.btn-wrapper button {
   width: 200px;
-  padding: 12px 48px;
+  padding: 6px 0;
   text-align: center;
   color: white;
   border: solid 2px white;
@@ -92,7 +92,7 @@ img {
   text-decoration: none;
 }
 
-.button:hover a {
+.btn-wrapper:hover button {
   background-color: white;
   color: black;
 }

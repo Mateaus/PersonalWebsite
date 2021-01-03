@@ -24,7 +24,7 @@
         top: 60px;
     }
 
-    &:hover .button {
+    &:hover .btn-wrapper {
         opacity: 1;
         bottom: 3em;
     }
@@ -61,7 +61,7 @@ img {
     transition: top .5s ease;
   }
 
-.button {
+.btn-wrapper {
     position: absolute;
     width: 350px;
     bottom: 0.5em;
@@ -70,9 +70,9 @@ img {
     transition: opacity .35s ease;
     transition: bottom .35s ease;
 
-    a {
+    button {
         width: 200px;
-        padding: 12px 48px;
+        padding: 6px 0;
         text-align: center;
         color: white;
         border: solid 2px white;
@@ -80,7 +80,7 @@ img {
         text-decoration: none;
     }
 
-    &:hover a {
+    &:hover button {
         background-color: white;
         color: black;
     }
