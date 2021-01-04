@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'projects.apps.ProjectsConfig',
-    'tinymce'
+    'tag.apps.TagConfig',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
