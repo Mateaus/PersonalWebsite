@@ -5,8 +5,32 @@
 <!-- Projects CSS -->
 <link rel="stylesheet" href="{% static 'projects/dist/css/projects.css' %}">
 {% endblock viewcss %}
-
 {% block content %}
-<div>
+<div class="detail">
+    <div class="img-wrapper">
+        <img src="{% static 'images/potato.png' %}" alt="">
+        <button class="btn img-arrow left"><</button>
+        <button class="btn img-arrow right">></button>
+        <button class="btn close">X</button>
+    </div>
+    <div class="detail-block">
+        <h2>Project Name</h2>
+        <h5 class="text-muted">SUMMATION OF SOLUTION</h5>
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+        </p>
+        <div style="display: inline-flex; align-items: center; height: 3em;">
+            <div class="tag-block">
+                <div class="tag">Java</div>
+                <div class="tag mx-2">Python</div>
+                <div class="tag mx-2">C</div>
+                <div class="tag mx-2">Docker</div>
+                <div class="tag mx-2">HTML</div>
+            </div>
+            <button class="btn btn-outline-secondary" style="margin-left: 10.5em;">View Site</button>
+        </div>
+    </div>
 </div>
 {% endblock %}
