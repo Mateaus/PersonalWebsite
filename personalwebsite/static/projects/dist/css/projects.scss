@@ -91,8 +91,15 @@ img {
 .detail {
     width: $base-detail-width;
     height: $base-detail-height;
-    margin: 100px auto;
     border: 0.5px solid darkgrey;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
 
     .detail-img {
         position: relative;
@@ -126,6 +133,7 @@ img {
     .detail-text {
         height: 40%;
         padding: 20px;
+        background-color: rgb(230, 230, 230);
 
         h2 {
             margin-bottom: 0; 

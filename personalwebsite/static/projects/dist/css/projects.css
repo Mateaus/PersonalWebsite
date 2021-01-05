@@ -100,8 +100,15 @@ img {
 .detail {
   width: 600px;
   height: 600px;
-  margin: 100px auto;
   border: 0.5px solid darkgrey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
 }
 
 .detail .detail-img {
@@ -136,6 +143,7 @@ img {
 .detail .detail-text {
   height: 40%;
   padding: 20px;
+  background-color: #e6e6e6;
 }
 
 .detail .detail-text h2 {
