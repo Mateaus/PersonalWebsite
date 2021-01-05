@@ -1,36 +1,25 @@
-{% extends 'base_page_view.html' %}
 {% load static %}
 
-{% block viewcss %}
-<!-- Projects CSS -->
-<link rel="stylesheet" href="{% static 'projects/dist/css/projects.css' %}">
-{% endblock viewcss %}
-{% block content %}
 <div class="detail">
-    <div class="img-wrapper">
-        <img src="{% static 'images/potato.png' %}" alt="">
+    <div class="detail-img">
+        <img class="detail-img" src="{% static 'images/potato.png' %}" alt="">
         <button class="btn img-arrow left"><</button>
         <button class="btn img-arrow right">></button>
-        <button class="btn close">X</button>
+        <button class="btn close-project">X</button>
     </div>
-    <div class="detail-block">
-        <h2>Project Name</h2>
-        <h5 class="text-muted">SUMMATION OF SOLUTION</h5>
-        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-        </p>
-        <div style="display: inline-flex; align-items: center; height: 3em;">
+    <div class="detail-text">
+        <h2>Project Title</h2>
+        <h6>QUICK SUMMARY</h5>
+            <p>{{project.description}}</p>
             <div class="tag-block">
+                <div class="tag ml-0">Java</div>
                 <div class="tag">Java</div>
-                <div class="tag mx-2">Python</div>
-                <div class="tag mx-2">C</div>
-                <div class="tag mx-2">Docker</div>
-                <div class="tag mx-2">HTML</div>
+                <div class="tag">Java</div>
+                <div class="tag">Java</div>
+                <div class="tag">Java</div>
             </div>
-            <button class="btn btn-outline-secondary" style="margin-left: 10.5em;">View Site</button>
-        </div>
+            <div class="button-block">
+                <div class="btn btn-outline-secondary">View Site</div>
+            </div>
     </div>
 </div>
-{% endblock %}
