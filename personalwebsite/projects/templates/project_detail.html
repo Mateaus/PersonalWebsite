@@ -5,10 +5,8 @@
         <img class="detail-img" src="{% static 'images/potato.png' %}" alt="">
         <button class="btn img-arrow left"><</button>
         <button class="btn img-arrow right">></button>
-        <button class="btn close-project" onclick='( () => {
-            const projectDetailDiv = this.parentNode.parentNode;
-            projectDetailDiv.parentNode.removeChild(projectDetailDiv);
-        })();'>X</button>
+        <button class="btn close-project" onclick='closeProjectDetail(this);'>X
+        </button>
     </div>
     <div class="detail-text">
         <h2>Project Title</h2>
