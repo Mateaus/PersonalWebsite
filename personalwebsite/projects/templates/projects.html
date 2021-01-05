@@ -15,29 +15,12 @@
         <div class="title">{{project.id}}</div>
         <div class="overlay"></div>
         <div class="btn-wrapper">
-            <button class="learn-more" onclick='(() => {
-                let projectId = this.parentElement.parentElement.id;
-                let xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = () => {
-                    if (xhttp.readyState == XMLHttpRequest.DONE) {
-                        if (xhttp.status == 200) {
-                            document.getElementById("myDiv").innerHTML = xhttp.responseText;
-                        } else if (xhttp.status == 400) {
-                            alert("There was an error 400");
-                        } else {
-                            alert("Something else other than 200 was returned");
-                        }
-                    }
-                }
-                xhttp.open("GET", "detail/" + projectId, true);
-                xhttp.send();
-            })();'>Learn More</button>
+            <button class="learn-more" onclick='displayProjectDetail(this);'>Learn More</button>
         </div>
     </div>
     {% endfor %}
 </div>
-<div id="myDiv">
-</div>
+<div id="project-detail"></div>
 {% endif %}
 {% endblock %}
 
