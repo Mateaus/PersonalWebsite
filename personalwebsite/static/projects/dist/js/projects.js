@@ -23,21 +23,32 @@ function displayProjectDetail(element) {
     xhttp.send();
 }
 
-const learnMoreElements = document.getElementsByClassName('learn-more');
-Array.from(learnMoreElements).forEach(element => {
-    element.addEventListener('click', () => displayProjectDetail(element));
+const mainProjDiv = document.getElementsByClassName("project-main")[0];
+mainProjDiv.addEventListener('click', event => {
+    if (event.target && event.target.nodeName == "BUTTON") {
+        let classes = event.target.className.split(" ");
+        if (classes) {
+            let targetClasses = JSON.stringify(["learn-more"]);
+            let selectedBtnClasses = JSON.stringify(classes);
+            if (targetClasses === selectedBtnClasses) {
+                displayProjectDetail(event.target);
+            }
+        }
+    }
 });
 
+
+// Detecting click event here using DOM event delegation
 const projectDetailDiv = document.getElementById("project-detail");
 projectDetailDiv.addEventListener('click', event => {
     // button was pressed inside detail div
     if (event.target && event.target.nodeName == "BUTTON") {
         // get button classes
-        const classes = event.target.className.split(" ");
+        let classes = event.target.className.split(" ");
         // make sure classes of the button matches close button classes
         if (classes) {
-            const targetClasses = JSON.stringify(["btn", "close-project"]);
-            const selectedBtnClasses = JSON.stringify(classes);
+            let targetClasses = JSON.stringify(["btn", "close-project"]);
+            let selectedBtnClasses = JSON.stringify(classes);
             if (targetClasses === selectedBtnClasses) {
                 closeProjectDetail(event.target);
             }
