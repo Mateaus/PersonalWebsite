@@ -1,7 +1,9 @@
 {% extends 'base_page_view.html' %}
 {% load static %}
+{% load tags %}
 
 {% block viewcss %}
+{% default_tag_css %}
 <!-- Projects CSS -->
 <link rel="stylesheet" href="{% static 'projects/dist/css/projects.css' %}">
 {% endblock viewcss %}
@@ -21,6 +23,11 @@
     {% endfor %}
 </div>
 <div id="project-detail"></div>
+<div class="pages">
+    {% if all_projects|length > 6 %}
+    {% include 'pagination.html' with page=project_list %}
+    {% endif %}
+</div>
 {% endif %}
 {% endblock %}
 

@@ -247,4 +247,40 @@ img {
   height: 30px;
   background-color: transparent;
 }
+
+.pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (min-width: 1200px) {
+  .pages {
+    margin-top: 10px;
+    padding-right: 5px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .pages {
+    margin-top: 10px;
+    padding-right: 55px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .pages {
+    margin-top: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.pagination .page-item a {
+  color: black;
+}
 /*# sourceMappingURL=projects.css.map */

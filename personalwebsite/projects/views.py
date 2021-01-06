@@ -5,7 +5,7 @@ from .models import Project
 # Create your views here.
 def projects(request):
     all_projects = Project.objects.all()
-    paginator = Paginator(all_projects, 3)
+    paginator = Paginator(all_projects, 6)
     page = request.GET.get('page')
 
     try:

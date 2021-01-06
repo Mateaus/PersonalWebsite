@@ -1,14 +1,6 @@
 from django.db import models
-from django.utils import timezone
-from django.contrib.auth.models import User
+from tag.models import Tag
 from tinymce.models import HTMLField
-
-
-class Tag(models.Model):
-    name = models.CharField(max_length=56)
-
-    def __str__(self):
-        return self.name
 
 
 class Post(models.Model):
