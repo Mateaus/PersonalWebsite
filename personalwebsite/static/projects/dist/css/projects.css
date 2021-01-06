@@ -34,7 +34,7 @@
 
 .project:hover .btn-wrapper {
   opacity: 1;
-  bottom: 3em;
+  bottom: 48px;
 }
 
 .overlay {
@@ -76,8 +76,6 @@ img {
   bottom: 0.5em;
   text-align: center;
   opacity: 0;
-  -webkit-transition: opacity .35s ease;
-  transition: opacity .35s ease;
   -webkit-transition: bottom .35s ease;
   transition: bottom .35s ease;
 }
@@ -86,7 +84,7 @@ img {
   width: 200px;
   padding: 6px 0;
   text-align: center;
-  color: white;
+  color: #505050;
   border: solid 2px white;
   z-index: 1;
   text-decoration: none;
@@ -109,10 +107,32 @@ img {
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: scale 2s linear;
-  transition: scale 2s linear;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-name: popIn;
+          animation-name: popIn;
+}
+
+@-webkit-keyframes popIn {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .detail .detail-img {

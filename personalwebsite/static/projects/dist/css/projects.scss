@@ -28,7 +28,7 @@ $base-detail-height: 600px;
 
     &:hover .btn-wrapper {
         opacity: 1;
-        bottom: 3em;
+        bottom: 48px;
     }
 }
 
@@ -69,14 +69,13 @@ img {
     bottom: 0.5em;
     text-align: center;
     opacity: 0;
-    transition: opacity .35s ease;
     transition: bottom .35s ease;
 
     button {
         width: 200px;
         padding: 6px 0;
         text-align: center;
-        color: white;
+        color: rgb(80, 80, 80);
         border: solid 2px white;
         z-index: 1;
         text-decoration: none;
@@ -100,8 +99,18 @@ img {
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
-    transform: scale(1);
-    transition: scale 2s linear;
+    animation-duration: 0.5s;
+    animation-name: popIn;
+
+    @keyframes popIn {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
 
     
     .detail-img {
