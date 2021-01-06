@@ -109,6 +109,10 @@ img {
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: scale 2s linear;
+  transition: scale 2s linear;
 }
 
 .detail .detail-img {
@@ -182,6 +186,8 @@ img {
   background-color: transparent;
   border-radius: 0;
   font-size: 3.5rem;
+  -webkit-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
 }
 
 .img-arrow.left {
@@ -194,8 +200,6 @@ img {
 
 .img-arrow:hover {
   color: darkgray;
-  -webkit-transition: color 0.5s ease-out;
-  transition: color 0.5s ease-out;
 }
 
 .tag-block {

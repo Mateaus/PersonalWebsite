@@ -1,26 +1,23 @@
 {% load static %}
 
-<div class="detail">
-    <div class="detail-img">
-        <img class="detail-img" src="{% static 'images/potato.png' %}" alt="">
-        <button class="btn img-arrow left"><</button>
-        <button class="btn img-arrow right">></button>
-        <button class="btn close-project">X</button>
+<div class="detail-img">
+    <img class="detail-img" src="{% static 'images/potato.png' %}" alt="">
+    <button class="btn img-arrow left"><</button>
+    <button class="btn img-arrow right">></button>
+    <button class="btn close-project">X</button>
+</div>
+<div class="detail-text">
+    <h2>Project Title</h2>
+    <h6>QUICK SUMMARY</h5>
+    <p>{{project.description}}</p>
+    <div class="tag-block">
+        <div class="tag ml-0">Java</div>
+        <div class="tag">Java</div>
+        <div class="tag">Java</div>
+        <div class="tag">Java</div>
+        <div class="tag">Java</div>
     </div>
-    <div class="detail-text">
-        <h2>Project Title</h2>
-        <h6>QUICK SUMMARY</h5>
-            <p>{{project.description}}</p>
-            <div class="tag-block">
-                <div class="tag ml-0">Java</div>
-                <div class="tag">Java</div>
-                <div class="tag">Java</div>
-                <div class="tag">Java</div>
-                <div class="tag">Java</div>
-            </div>
-            <div class="button-block">
-                <div class="btn btn-outline-secondary">View Site</div>
-            </div>
+    <div class="button-block">
+        <div class="btn btn-outline-secondary">View Site</div>
     </div>
 </div>
-
