@@ -4,16 +4,8 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-}
-
-@media screen and (max-width: 991px) {
-  .project-main {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .project {
@@ -68,6 +60,7 @@ img {
   z-index: 1;
   -webkit-transition: top .5s ease;
   transition: top .5s ease;
+  pointer-events: none;
 }
 
 .btn-wrapper {
@@ -98,7 +91,7 @@ img {
 .detail {
   width: 600px;
   height: 600px;
-  border: 0.5px solid darkgrey;
+  border: 0.5px solid darkgray;
   position: absolute;
   top: 0;
   left: 0;

@@ -1,5 +1,7 @@
 function closeProjectDetail(element) {
     const projectDetailDiv = element.parentNode.parentNode;
+
+    projectDetailDiv.classList.remove("detail");
     projectDetailDiv.innerHTML = "";
 }
 
@@ -49,7 +51,6 @@ projectDetailDiv.addEventListener('click', event =>
 document.addEventListener('click', event => {
     let projectDetailDiv = document.getElementById('project-detail');
     let isClickInside = projectDetailDiv.contains(event.target);
-
     if (!isClickInside) {
         projectDetailDiv.innerHTML = "";
         projectDetailDiv.classList.remove("detail");
