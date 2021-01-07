@@ -89,8 +89,8 @@ img {
 }
 
 .detail {
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 715px;
   border: 0.5px solid darkgray;
   position: absolute;
   top: 0;
@@ -161,6 +161,7 @@ img {
   height: 40%;
   padding: 20px;
   background-color: #e6e6e6;
+  word-wrap: break-word;
 }
 
 .detail .detail-text h2 {
@@ -169,6 +170,11 @@ img {
 
 .detail .detail-text h6 {
   margin-left: 2px;
+}
+
+.detail .detail-text .p-wrapper {
+  height: 120px;
+  border: 2pt dashed red;
 }
 
 .detail .detail-text .button-block {
@@ -181,6 +187,10 @@ img {
           justify-content: flex-end;
   bottom: 25px;
   left: 12px;
+}
+
+.detail .detail-text .tag-block {
+  margin-top: 10px;
 }
 
 .img-arrow {
@@ -216,6 +226,7 @@ img {
 }
 
 .tag-block {
+  border: 1px solid orange;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

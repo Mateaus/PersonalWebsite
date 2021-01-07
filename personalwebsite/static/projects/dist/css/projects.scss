@@ -1,7 +1,7 @@
 $base-project-width: 350px;
 $base-project-height: 200px;
-$base-detail-width: 600px;
-$base-detail-height: 600px;
+$base-detail-width: 700px;
+$base-detail-height: 715px;
 
 .project-main {
     display: flex;
@@ -144,6 +144,7 @@ img {
         height: 40%;
         padding: 20px;
         background-color: rgb(230, 230, 230);
+        word-wrap: break-word;
 
         h2 {
             margin-bottom: 0; 
@@ -153,12 +154,21 @@ img {
             margin-left: 2px;
         }
 
+        .p-wrapper {
+            height: 120px;
+            border: 2pt dashed red;
+        }
+
         .button-block {
             display: flex;
             position: relative;
             justify-content: flex-end;
             bottom: 25px;
             left: 12px;
+        }
+
+        .tag-block {
+            margin-top: 10px;
         }
     }
 }
@@ -189,6 +199,7 @@ img {
 }
 
 .tag-block {
+    border: 1px solid orange;
     display: flex;
     width: fit-content;
 
