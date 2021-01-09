@@ -1,0 +1,122 @@
+:root {
+    --font-default-color: #333333;
+    --font-scale: 0.95;
+
+    --gray0: #f8f8f8;
+    --gray1: #dbe1e8;
+    --gray2: #b2becd;
+    --gray3: #6c7983;
+    --gray4: #454e56;
+    --gray5: #2a2e35;
+    --gray6: #12181b;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --font-scale: 1;
+    }
+}
+
+@media(min-width: 992px) {
+    :root {
+        --font-scale: 1.05;
+    }
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cabin', sans-serif;
+    /* color: var(--font-default-color); */
+}
+
+h1 {
+    font-size: calc(2em * var(--font-scale));
+}
+
+h2 {
+    font-size: calc(1.5em * var(--font-scale));
+}
+
+h3 {
+    font-size: calc(1.17em * var(--font-scale));
+}
+
+h4 {
+    font-size: calc(1em * var(--font-scale));
+}
+
+h5 {
+    font-size: calc(0.83em * var(--font-scale));
+}
+
+h6 {
+    font-size: calc(0.67em * var(--font-scale));
+}
+
+p {
+    font-size: calc(1em * var(--font-scale));
+    font-family: 'Cabin', sans-serif;
+    /* color: var(--font-default-color); */
+}
+
+a {
+    font-family: 'Cabin', sans-serif;
+    color: currentColor;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.navbar-container {
+    background-color: white;
+    padding: 8px 16px;
+}
+
+/* Handles the view name for mobile screens */
+#my-current-view {
+    font-size: calc(22px * var(--font-scale));
+}
+
+@media only screen and (min-width: 768px) {
+    #my-current-view {
+        font-size: calc(24px * var(--font-scale));
+    }
+}
+
+@media(min-width: 992px) {
+    .navbar-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+/* Handles the navlinks on large screens */
+@media only screen and (min-width: 1200px) {
+    .nav-link {
+        font-size: calc(16px * var(--font-scale));
+    }
+}
+
+.light {
+    --bg: var(--gray0);
+    --text: var(--gray6);
+}
+
+.dark {
+    --bg: var(--gray5);
+    --text: var(--gray0);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
