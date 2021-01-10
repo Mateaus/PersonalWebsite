@@ -145,7 +145,7 @@ main {
   .m-navbar-nav > .m-nav-item:nth-child(4) {
     margin-right: auto;
   }
-  .m-navbar-nav > .m-nav-item:nth-child(-n+4) > .m-nav-link.m-active {
+  .m-navbar-nav > .m-nav-item:nth-child(-n+4) > .m-active {
     color: var(--nav-link-active) !important;
     border-radius: 0.5rem;
     background-color: var(--nav-link-active-background);
