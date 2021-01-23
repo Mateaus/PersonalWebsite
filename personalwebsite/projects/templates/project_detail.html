@@ -1,23 +1,23 @@
 {% load static %}
-
+{% load tags %}
 <div class="detail-img">
     <img class="detail-img" src="{% static 'images/potato.png' %}" alt="">
     <button class="btn img-arrow left"><</button>
     <button class="btn img-arrow right">></button>
-    <button class="btn close-project">X</button>
+    <button class="btn close-project">X</button> 
 </div>
 <div class="detail-text">
-    <h2>Project Title</h2>
-    <h6>QUICK SUMMARY</h5>
-    <div class="p-wrapper"><p>{{project.description}}</p></div>
-    <div class="tag-block">
-        <div class="tag ml-0">Java</div>
-        <div class="tag">Java</div>
-        <div class="tag">Java</div>
-        <div class="tag">Java</div>
-        <div class="tag">Java</div>
+    <div class="heading-block">
+        <h2>{{project.title}}</h2>
+        <h4>QUICK DESCRIPTION</h6>
     </div>
-    <div class="button-block">
-        <div class="btn btn-outline-secondary">View Site</div>
+    <div class="description">
+        <p>{{project.description}}</p>
+    </div>
+    <div class="tag-list">
+        {% show_tags project %}
+    </div>
+    <div class="learn-more">
+        <button class="btn btn-outline-secondary">Learn More</button>
     </div>
 </div>

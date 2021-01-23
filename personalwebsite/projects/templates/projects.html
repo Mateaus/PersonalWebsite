@@ -6,6 +6,7 @@
 {% default_tag_css %}
 <!-- Projects CSS -->
 <link rel="stylesheet" href="{% static 'projects/dist/css/projects.css' %}">
+<link rel="stylesheet" href="{% static 'projects/dist/css/project_detail.css' %}">
 {% endblock viewcss %}
 
 {% block content %}
@@ -22,7 +23,7 @@
     </div>
     {% endfor %}
 </div>
-<div id="project-detail"></div>
+<div id="project-detail" class="detail"></div>
 <div class="pages">
     {% if all_projects|length > 6 %}
     {% include 'pagination.html' with page=project_list %}

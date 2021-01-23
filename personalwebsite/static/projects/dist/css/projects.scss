@@ -86,144 +86,7 @@ img {
     }
 }
 
-.detail {
-    width: $base-detail-width;
-    height: $base-detail-height;
-    border: 0.5px solid darkgray;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-top: 10vh;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1;
-    animation-duration: 0.5s;
-    animation-name: popIn;
-
-    @keyframes popIn {
-        from {
-            transform: scale(0);
-        }
-
-        to {
-            transform: scale(1);
-        }
-    }
-
-    .detail-img {
-        position: relative;
-        height: 60%;
-
-        .detail-img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .img-arrow {
-            position: absolute;
-            bottom: 5px;
-
-            &.left {
-                left: 5px;
-            }
-        
-            &.right {
-                right: 5px;
-            }
-        }
-
-        .close-project {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-        }
-    }
-    
-    .detail-text {
-        height: 40%;
-        padding: 20px;
-        background-color: rgb(230, 230, 230);
-        word-wrap: break-word;
-
-        h2 {
-            margin-bottom: 0; 
-        }
-
-        h6 {
-            margin-left: 2px;
-        }
-
-        .p-wrapper {
-            height: 120px;
-            border: 2pt dashed red;
-        }
-
-        .button-block {
-            display: flex;
-            position: relative;
-            justify-content: flex-end;
-            bottom: 25px;
-            left: 12px;
-        }
-
-        .tag-block {
-            margin-top: 10px;
-        }
-    }
-}
-
-.img-arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 12px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 0;
-    font-size: 3.5rem;
-    transition: color 0.5s ease-out;
-
-    &.left {
-        padding-right: 18px;
-    }
-
-    &.right {
-        padding-left: 18px;
-    }
-
-    &:hover {
-        color: darkgray;
-    }
-}
-
-.tag-block {
-    border: 1px solid orange;
-    display: flex;
-    width: fit-content;
-
-    .tag {
-        margin: 2px 4px;
-        width: 50px;
-        border: 1px solid darkgrey;
-        border-radius: 10px;
-        text-align: center;
-    }
-}
-
-.close-project {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-}
-
 .pages {
-    // border: 2px solid palegoldenrod;
     display: flex;
     justify-content: flex-end;
 
@@ -246,3 +109,140 @@ img {
 .pagination .page-item a {
     color: black;
 }
+
+// .detail {
+//     width: $base-detail-width;
+//     height: $base-detail-height;
+//     border: 0.5px solid darkgray;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     margin-top: 10vh;
+//     margin-left: auto;
+//     margin-right: auto;
+//     z-index: 1;
+//     animation-duration: 0.5s;
+//     animation-name: popIn;
+
+//     @keyframes popIn {
+//         from {
+//             transform: scale(0);
+//         }
+
+//         to {
+//             transform: scale(1);
+//         }
+//     }
+
+//     .detail-img {
+//         position: relative;
+//         height: 60%;
+
+//         .detail-img {
+//             width: 100%;
+//             height: 100%;
+//         }
+
+//         .img-arrow {
+//             position: absolute;
+//             bottom: 5px;
+
+//             &.left {
+//                 left: 5px;
+//             }
+        
+//             &.right {
+//                 right: 5px;
+//             }
+//         }
+
+//         .close-project {
+//             position: absolute;
+//             top: 5px;
+//             right: 5px;
+//         }
+//     }
+    
+//     .detail-text {
+//         height: 40%;
+//         padding: 20px;
+//         background-color: rgb(230, 230, 230);
+//         word-wrap: break-word;
+
+//         h2 {
+//             margin-bottom: 0; 
+//         }
+
+//         h6 {
+//             margin-left: 2px;
+//         }
+
+//         .p-wrapper {
+//             height: 120px;
+//             border: 2pt dashed red;
+//         }
+
+//         .button-block {
+//             display: flex;
+//             position: relative;
+//             justify-content: flex-end;
+//             bottom: 25px;
+//             left: 12px;
+//         }
+
+//         .tag-block {
+//             margin-top: 10px;
+//         }
+//     }
+// }
+
+// .img-arrow {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding-bottom: 12px;
+//     width: 50px;
+//     height: 50px;
+//     background-color: transparent;
+//     border-radius: 0;
+//     font-size: 3.5rem;
+//     transition: color 0.5s ease-out;
+
+//     &.left {
+//         padding-right: 18px;
+//     }
+
+//     &.right {
+//         padding-left: 18px;
+//     }
+
+//     &:hover {
+//         color: darkgray;
+//     }
+// }
+
+// .tag-block {
+//     border: 1px solid orange;
+//     display: flex;
+//     width: fit-content;
+
+//     .tag {
+//         margin: 2px 4px;
+//         width: 50px;
+//         border: 1px solid darkgrey;
+//         border-radius: 10px;
+//         text-align: center;
+//     }
+// }
+
+// .close-project {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 2rem;
+//     width: 30px;
+//     height: 30px;
+//     background-color: transparent;
+// }
+

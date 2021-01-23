@@ -1,7 +1,7 @@
 function closeProjectDetail(element) {
     const projectDetailDiv = element.parentNode.parentNode;
 
-    projectDetailDiv.classList.remove("detail");
+    projectDetailDiv.classList.remove("show");
     projectDetailDiv.innerHTML = "";
 }
 
@@ -13,7 +13,8 @@ function displayProjectDetail(element) {
             if (xhttp.status == 200) {
                 let projectDetailDiv = document.getElementById("project-detail");
                 projectDetailDiv.innerHTML = xhttp.responseText;
-                projectDetailDiv.classList.add("detail");
+                projectDetailDiv.classList.add("show");
+                console.log(projectDetailDiv.classList);
             } else if (xhttp.status == 400) {
                 alert("There was an error 400");
             } else {
@@ -53,6 +54,6 @@ document.addEventListener('click', event => {
     let isClickInside = projectDetailDiv.contains(event.target);
     if (!isClickInside) {
         projectDetailDiv.innerHTML = "";
-        projectDetailDiv.classList.remove("detail");
+        projectDetailDiv.classList.remove("show");
     }
 });
