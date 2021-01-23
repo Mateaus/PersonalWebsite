@@ -11,7 +11,7 @@
 .project {
   position: relative;
   margin-top: 50px;
-  width: 350px;
+  width: 300px;
   height: 200px;
 }
 
@@ -49,7 +49,7 @@ img {
 
 .title {
   position: absolute;
-  width: 350px;
+  width: 300px;
   left: 0;
   top: 30px;
   font-weight: 700;
@@ -65,7 +65,7 @@ img {
 
 .btn-wrapper {
   position: absolute;
-  width: 350px;
+  width: 300px;
   bottom: 0.5em;
   text-align: center;
   opacity: 0;

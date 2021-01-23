@@ -1,16 +1,16 @@
 $max-detail-width: 600px;
 $min-detail-height: 750px;
-$detail-width: 90vw;
-$detail-height: calc(1000px - 40vw);
-$detail-img-height: $detail-width * .67;
+$base-detail-width: 90vw;
+$base-detail-height: calc(1000px - 40vw);
+$base-detail-img-height: $base-detail-width * .67;
 $max-detail-img-height: $max-detail-width * .67;
 
 .detail {
     border: 0.5px solid #404040;
     background-color: #E6E6E6;
     margin: 20px auto;
-    width: $detail-width;
-    height: $detail-height;
+    width: $base-detail-width;
+    height: $base-detail-height;
     max-width: $max-detail-width;
     min-height: $min-detail-height;
     position: absolute;
@@ -32,7 +32,7 @@ $max-detail-img-height: $max-detail-width * .67;
 
     .detail-img {
         position: relative;
-        height: $detail-img-height;
+        height: $base-detail-img-height;
         max-height: $max-detail-img-height;
 
         img {
@@ -78,7 +78,7 @@ $max-detail-img-height: $max-detail-width * .67;
         background-color: #E6E6E6;
         padding: 12px;
         color: #404040;
-        height: calc(#{$detail-height} - #{$detail-img-height} - 2px);
+        height: calc(#{$base-detail-height} - #{$base-detail-img-height} - 2px);
         min-height: calc(#{$min-detail-height} - #{$max-detail-img-height} - 2px);
         position: relative;
 
