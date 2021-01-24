@@ -8,6 +8,9 @@ def projects(request):
     paginator = Paginator(all_projects, 6)
     page = request.GET.get('page')
 
+    # print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+    # ig = all_projects[0].album.images.first().image
+
     try:
         project_list = paginator.page(page)
     except PageNotAnInteger:
@@ -17,7 +20,7 @@ def projects(request):
 
     context = {
         'all_projects': all_projects,
-        'project_list': project_list
+        'project_list': project_list,
     }
     return render(request, 'projects.html', context)
 

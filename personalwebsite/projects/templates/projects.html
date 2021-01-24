@@ -1,6 +1,7 @@
 {% extends 'base_page_view.html' %}
 {% load static %}
 {% load tags %}
+{% load project_tags %}
 
 {% block viewcss %}
 {% default_tag_css %}
@@ -14,7 +15,8 @@
 <div class="project-main">
     {% for project in project_list %}
     <div id="{{project.id}}" class="project ml-1">
-        <img src="{% static 'images/potato.png' %}" alt="">
+        {% comment %} <img src="{% static 'images/empty.png' %}" alt=""> {% endcomment %}
+        {% show_project_cover_image project %}
         <div class="title">{{project.title}}</div>
         <div class="overlay"></div>
         <div class="btn-wrapper">

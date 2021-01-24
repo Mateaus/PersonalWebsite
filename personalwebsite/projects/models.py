@@ -29,7 +29,6 @@ class Image(models.Model):
         return self.name
     
 
-
 class Project(models.Model):
     title = models.CharField(max_length=64, null=False)
     description = models.TextField(max_length=389)
@@ -40,6 +39,3 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-
-
-
