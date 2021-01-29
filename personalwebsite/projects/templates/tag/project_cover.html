@@ -1,1 +1,6 @@
+{% load static %}
+{% if cover_img %}
 <img src="{{cover_img.url}}" alt="">
+{% else %}
+<img src="{% static 'images/empty.png' %}" alt="">
+{% endif %}

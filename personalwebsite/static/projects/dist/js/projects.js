@@ -1,8 +1,11 @@
 function closeProjectDetail(element) {
     const projectDetailDiv = element.parentNode.parentNode;
-
     projectDetailDiv.classList.remove("show");
     projectDetailDiv.innerHTML = "";
+}
+
+function goBackImage(element) {
+    console.log(element);
 }
 
 function displayProjectDetail(element) {
@@ -14,7 +17,6 @@ function displayProjectDetail(element) {
                 let projectDetailDiv = document.getElementById("project-detail");
                 projectDetailDiv.innerHTML = xhttp.responseText;
                 projectDetailDiv.classList.add("show");
-                console.log(projectDetailDiv.classList);
             } else if (xhttp.status == 400) {
                 alert("There was an error 400");
             } else {
@@ -47,6 +49,8 @@ mainProjDiv.addEventListener('click', event =>
 const projectDetailDiv = document.getElementById("project-detail");
 projectDetailDiv.addEventListener('click', event =>
     executeFuncOnClass(event, "BUTTON", ["btn", "close-project"], closeProjectDetail));
+projectDetailDiv.addEventListener('click', event => 
+    executeFuncOnClass(event, "BUTTON", ["btn", "img-arrow", "left"], goBackImage));
 
 // close project details when clicking outside div
 document.addEventListener('click', event => {

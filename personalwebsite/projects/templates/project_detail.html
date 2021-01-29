@@ -1,7 +1,11 @@
 {% load static %}
 {% load tags %}
+{% load project_tags %}
+<script>
+    console.log("gello");
+</script>
 <div class="detail-img">
-    <img class="detail-img" src="{% static 'images/potato.png' %}" alt="">
+    {% show_project_cover_image project %}
     <button class="btn img-arrow left"><</button>
     <button class="btn img-arrow right">></button>
     <button class="btn close-project">X</button> 
