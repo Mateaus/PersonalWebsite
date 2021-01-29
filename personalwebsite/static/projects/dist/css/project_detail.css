@@ -29,48 +29,48 @@
   opacity: 1;
 }
 
-.detail .detail-img {
+.detail .carousel {
   position: relative;
   height: 60.3vw;
   max-height: 402px;
 }
 
-.detail .detail-img img {
+.detail .carousel img {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.detail .detail-img .img-arrow {
+.detail .carousel .img-arrow {
   position: absolute;
   bottom: 5px;
 }
 
-.detail .detail-img .img-arrow.left {
+.detail .carousel .img-arrow.prev {
   left: 5px;
 }
 
-.detail .detail-img .img-arrow.right {
+.detail .carousel .img-arrow.next {
   right: 5px;
 }
 
-.detail .detail-img .close-project {
+.detail .carousel .close-project {
   position: absolute;
   top: 5px;
   right: 5px;
 }
 
-.detail .detail-img button {
+.detail .carousel button {
   color: #BFBFBF;
 }
 
-.detail .detail-img button:focus {
+.detail .carousel button:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.detail .detail-img button:hover {
+.detail .carousel button:hover {
   color: #404040;
 }
 
@@ -134,11 +134,11 @@
   transition: color 0.5s ease-out;
 }
 
-.img-arrow.left {
+.img-arrow.prev {
   padding-right: 18px;
 }
 
-.img-arrow.right {
+.img-arrow.next {
   padding-left: 18px;
 }
 

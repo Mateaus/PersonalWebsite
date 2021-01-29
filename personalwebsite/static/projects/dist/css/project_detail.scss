@@ -2,8 +2,8 @@ $max-detail-width: 600px;
 $min-detail-height: 750px;
 $base-detail-width: 90vw;
 $base-detail-height: calc(1000px - 40vw);
-$base-detail-img-height: $base-detail-width * .67;
-$max-detail-img-height: $max-detail-width * .67;
+$base-carousel-height: $base-detail-width * .67;
+$max-carousel-height: $max-detail-width * .67;
 
 .detail {
     border: 0.5px solid #404040;
@@ -30,10 +30,10 @@ $max-detail-img-height: $max-detail-width * .67;
         opacity: 1;
     }
 
-    .detail-img {
+    .carousel {
         position: relative;
-        height: $base-detail-img-height;
-        max-height: $max-detail-img-height;
+        height: $base-carousel-height;
+        max-height: $max-carousel-height;
 
         img {
             position: absolute;
@@ -45,11 +45,11 @@ $max-detail-img-height: $max-detail-width * .67;
             position: absolute;
             bottom: 5px;
 
-            &.left {
+            &.prev {
                 left: 5px;
             }
         
-            &.right {
+            &.next {
                 right: 5px;
             }
         }
@@ -78,8 +78,8 @@ $max-detail-img-height: $max-detail-width * .67;
         background-color: #E6E6E6;
         padding: 12px;
         color: #404040;
-        height: calc(#{$base-detail-height} - #{$base-detail-img-height} - 2px);
-        min-height: calc(#{$min-detail-height} - #{$max-detail-img-height} - 2px);
+        height: calc(#{$base-detail-height} - #{$base-carousel-height} - 2px);
+        min-height: calc(#{$min-detail-height} - #{$max-carousel-height} - 2px);
         position: relative;
 
         .heading-block {
@@ -123,11 +123,11 @@ $max-detail-img-height: $max-detail-width * .67;
     font-size: 3.5rem;
     transition: color 0.5s ease-out;
 
-    &.left {
+    &.prev {
         padding-right: 18px;
     }
 
-    &.right {
+    &.next {
         padding-left: 18px;
     }
 

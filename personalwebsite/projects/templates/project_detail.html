@@ -1,13 +1,16 @@
 {% load static %}
 {% load tags %}
 {% load project_tags %}
-<script>
-    console.log("gello");
-</script>
-<div class="detail-img">
-    {% show_project_cover_image project %}
-    <button class="btn img-arrow left"><</button>
-    <button class="btn img-arrow right">></button>
+<div class="carousel">
+    <div class="carousel-track-container">
+        <ul class="carousel-track">
+            <li class="carousel-slide">
+                {% show_project_cover_image project %}
+            </li>
+        </ul>
+    </div>
+    <button class="btn img-arrow prev"><</button>
+    <button class="btn img-arrow next">></button>
     <button class="btn close-project">X</button> 
 </div>
 <div class="detail-text">
