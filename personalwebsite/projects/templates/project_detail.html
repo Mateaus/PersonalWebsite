@@ -2,12 +2,11 @@
 {% load tags %}
 {% load project_tags %}
 <div class="carousel">
-    <div class="carousel-track-container">
-        <ul class="carousel-track">
-            <li class="carousel-slide">
-                {% show_project_cover_image project %}
-            </li>
-        </ul>
+    <div class="carousel-slide">
+        {% show_project_cover_image project %}
+    </div>
+    <div class="carousel-slide">
+        <img src="{% static 'images/potato.jpg' %}" alt="">
     </div>
     <button class="btn img-arrow prev"><</button>
     <button class="btn img-arrow next">></button>

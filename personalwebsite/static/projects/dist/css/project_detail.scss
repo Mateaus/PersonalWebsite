@@ -35,10 +35,17 @@ $max-carousel-height: $max-detail-width * .67;
         height: $base-carousel-height;
         max-height: $max-carousel-height;
 
-        img {
+        .carousel-slide {
             position: absolute;
             width: 100%;
             height: 100%;
+            animation-name: fade;
+            animation-duration: 0.5s;
+
+            @keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+            }
         }
 
         .img-arrow {
@@ -167,3 +174,4 @@ $max-carousel-height: $max-detail-width * .67;
         text-align: center;
     }
 }
+
