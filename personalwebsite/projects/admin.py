@@ -4,6 +4,7 @@ from django import forms
 from .models import Project, Image, ImageAlbum
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html
+from django.db.models import Q
 
 
 class ProjectForm(forms.ModelForm):
@@ -15,8 +16,7 @@ class ProjectForm(forms.ModelForm):
         cleaned_data = self.cleaned_data
         tags = cleaned_data['tags']
         if len(tags) > 8:
-            raise ValidationError(
-                "You can't assign more than 8 tags to a project.")
+            raise ValidationError("You can't assign more than 8 tags to a project.")
         return cleaned_data
 
 
@@ -24,6 +24,23 @@ class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
         fields = ['name', 'image', 'default', 'album']
+
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        default = cleaned_data['default']
+        try:
+            image_album = ImageAlbum.objects.get(pk=cleaned_data['album'].pk)
+        except AttributeError:
+            return cleaned_data
+
+        # does this album already have a default image set?
+        if image_album and default:
+            for image in image_album.images.all():
+                if image.default:
+                    raise ValidationError("This image album already has a default set.")
+        
+        return cleaned_data
+
 
 
 @admin.register(Project)
