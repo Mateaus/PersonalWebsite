@@ -31,6 +31,7 @@ class Image(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=64, null=False)
     description = models.TextField(max_length=389)
+    quick_summary = models.CharField(max_length=64, null=False)
     tags = models.ManyToManyField(Tag, blank=True)
     data_added = models.DateTimeField(auto_now_add=True)
     last_modified_date = models.DateTimeField(auto_now=True)
