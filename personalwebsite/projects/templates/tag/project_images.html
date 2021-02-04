@@ -1,0 +1,8 @@
+{% load static %}
+{% if proj_images|length != 0 %}
+{% for image in proj_images %}
+<img class="carousel-slide" src={{image}} alt="">
+{% endfor %}
+{% else %}
+<img src="{% static 'images/empty.png' %}" alt="">
+{% endif %}

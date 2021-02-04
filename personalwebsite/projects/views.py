@@ -5,7 +5,7 @@ from .models import Project
 # Create your views here.
 def projects(request):
     all_projects = Project.objects.all()
-    paginator = Paginator(all_projects, 3)
+    paginator = Paginator(all_projects, 6)
     page = request.GET.get('page')
 
     try:
@@ -17,6 +17,14 @@ def projects(request):
 
     context = {
         'all_projects': all_projects,
-        'project_list': project_list
+        'project_list': project_list,
     }
-    return render(request, 'projects/projects.html', context)
+    return render(request, 'projects.html', context)
+
+
+def project_detail(request, pk):
+    project = Project.objects.get(pk=pk)
+    context = {
+        'project': project
+    }
+    return render(request, "project_detail.html", context)

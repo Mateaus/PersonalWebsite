@@ -1,0 +1,109 @@
+$base-project-width: 300px;
+$base-project-height: 200px;
+
+.project-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    position: relative;
+    margin-top: 50px;
+    width: $base-project-width;
+    height: $base-project-height;
+
+    &:hover .overlay {
+        display: block;
+        background: rgba(0, 0, 0, .3);    
+    }
+
+    &:hover .title {
+        top: 60px;
+    }
+
+    &:hover .btn-wrapper {
+        opacity: 1;
+        bottom: 48px;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.title {
+    position: absolute;
+    width: $base-project-width;
+    left: 0;
+    top: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    z-index: 1;
+    transition: top .5s ease;
+    pointer-events: none;
+  }
+
+.btn-wrapper {
+    position: absolute;
+    width: $base-project-width;
+    bottom: 0.5rem;
+    text-align: center;
+    opacity: 0;
+    transition: bottom .35s ease;
+
+    button {
+        width: 200px;
+        padding: 6px 0;
+        text-align: center;
+        color: rgb(80, 80, 80);
+        border: solid 2px white;
+        z-index: 1;
+        text-decoration: none;
+    }
+
+    &:hover button {
+        background-color: white;
+        color: black;
+    }
+}
+
+.pages {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: 1200px) {
+        margin-top: 10px;
+        padding-right: 5px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        margin-top: 10px;
+        padding-right: 55px;
+    }
+
+    @media (max-width: 991.98px) {
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+
+.pagination .page-item a {
+    color: black;
+}

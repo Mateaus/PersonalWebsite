@@ -1,0 +1,38 @@
+{% extends 'base_page_view.html' %}
+{% load static %}
+{% load tags %}
+{% load project_tags %}
+
+{% block viewcss %}
+{% default_tag_css %}
+<!-- Projects CSS -->
+<link rel="stylesheet" href="{% static 'projects/dist/css/projects.css' %}">
+<link rel="stylesheet" href="{% static 'projects/dist/css/project_detail.css' %}">
+{% endblock viewcss %}
+
+{% block content %}
+{% if project_list %}
+<div class="project-main">
+    {% for project in project_list %}
+    <div id="{{project.id}}" class="project ml-1">
+        {% show_project_cover_image project %}
+        <div class="title">{{project.title}}</div>
+        <div class="overlay"></div>
+        <div class="btn-wrapper">
+            <button class="learn-more">Learn More</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div id="project-detail" class="detail"></div>
+<div class="pages">
+    {% if all_projects|length > 6 %}
+    {% include 'pagination.html' with page=project_list %}
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block viewjs %}
+<script src="{% static 'projects/dist/js/projects.js' %}"></script>
+{% endblock %}
