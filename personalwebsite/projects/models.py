@@ -16,7 +16,6 @@ class ImageAlbum(models.Model):
         return self.name
     
 
-
 class Image(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to="project/cover_images/")

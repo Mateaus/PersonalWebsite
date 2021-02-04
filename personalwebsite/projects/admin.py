@@ -37,18 +37,29 @@ class ImageAdmin(admin.ModelAdmin):
     form = ImageForm
 
 
+class ImageAlbumForm(forms.ModelForm):
+    class Meta:
+        model = ImageAlbum
+        fields = ['name']
+
+
 @admin.register(ImageAlbum)
 class ImageAlbumAdmin(admin.ModelAdmin):
+    form = ImageAlbumForm
     list_display = ('name', 'date_created', 'default')
-    readonly_fields = ('images',)    
-
-    def default(self, album):
-        return format_html('<img src="{}" style="width: 150px; height:100px;" />'.format(album.images.filter(default=True).first().image.url))
+    readonly_fields = ('images',)
 
     def images(self, album):
-        album_images = []
-        for obj in album.images.all():
-            album_images.append('<img src="{}" style="width: 150px; height:100px; margin-right: 10px" />'.format(obj.image.url))
-        album_images = "".join(album_images)
-        return format_html(album_images)
+        if len(album.images.all()) != 0:
+            album_images = []
+            for obj in album.images.all():
+                album_images.append('<img src="{}" style="width: 150px; height:100px; margin-right: 10px" />'.format(obj.image.url))
+            album_images = "".join(album_images)
+            return format_html(album_images)
+        return None
 
+    def default(self, album):
+        album_cover_img = album.images.filter(default=True).first()
+        if (album_cover_img):
+            return format_html('<img src="{}" style="width: 150px; height:100px;" />'.format(album_cover_img.image.url))
+        return
